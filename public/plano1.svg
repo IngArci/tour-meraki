@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 2478.26 1197.39">
+    <defs>
+        <style>
+            .cls-1{stroke:url(#DORADO-3);}.cls-1,.cls-2,.cls-3,.cls-4,.cls-5{fill:none;stroke-miterlimit:10;}.cls-1,.cls-2,.cls-5{stroke-width:.5px;}.cls-6{font-size:7.52px;}.cls-6,.cls-7{fill:#1d1d1b;font-family:MyriadPro-Regular,
+            'Myriad Pro';}.cls-2{stroke:url(#DORADO-4);stroke-dasharray:0 0 5.01
+            5.01;}.cls-3{stroke:url(#DORADO);}.cls-4{stroke:url(#DORADO-2);}.cls-8{fill:#009640;opacity:.8;}.cls-8,.cls-9{stroke-width:0px;}.cls-9{fill:#009fe3;opacity:.78;}.cls-5{stroke:url(#DORADO-5);}.cls-7{font-size:12px;}</style>
+        <linearGradient id="DORADO" x1="105.33" y1="793.56" x2="1433.41" y2="793.56"
+            gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#a27e07" />
+            <stop offset=".11" stop-color="#dab702" />
+            <stop offset=".17" stop-color="#f9d700" />
+            <stop offset=".4" stop-color="#8b6d05" />
+            <stop offset=".43" stop-color="#987b04" />
+            <stop offset=".49" stop-color="#baa002" />
+            <stop offset=".57" stop-color="#f1dc00" />
+            <stop offset=".59" stop-color="#ffeb00" />
+            <stop offset=".81" stop-color="#edc705" />
+            <stop offset="1" stop-color="#e1af09" />
+        </linearGradient>
+        <linearGradient id="DORADO-2" x1="26.92" y1="602.8" x2="2403.91" y2="602.8"
+            xlink:href="#DORADO" />
+        <linearGradient id="DORADO-3" x1="2401.18" y1="553.63" x2="2402.38" y2="553.63"
+            xlink:href="#DORADO" />
+        <linearGradient id="DORADO-4" x1="2401.18" y1="663.81" x2="2402.38" y2="663.81"
+            xlink:href="#DORADO" />
+        <linearGradient id="DORADO-5" x1="2401.18" y1="771.49" x2="2402.38" y2="771.49"
+            xlink:href="#DORADO" />
+    </defs>
+    <g id="LOTE_COLOR">
+        <rect class="cls-8" x="2238.76" y="684.61" width="42.72" height="57.55"
+            transform="translate(-3.43 10.97) rotate(-.28)" />
+        <polygon class="cls-8"
+            points="2237.61 742.27 2194.72 742.34 2194.44 684.94 2237.32 684.72 2237.61 742.27" />
+        <rect class="cls-8" x="2150.56" y="685.05" width="42.72" height="57.4"
+            transform="translate(-3.45 10.6) rotate(-.28)" />
+        <rect class="cls-8" x="2106.54" y="685.26" width="42.72" height="57.4"
+            transform="translate(-3.44 10.33) rotate(-.28)" />
+        <polygon class="cls-8"
+            points="2106.69 744.06 2149.41 743.85 2149.71 801.4 2106.83 801.62 2106.69 744.06" />
+        <rect class="cls-8" x="2150.86" y="743.74" width="42.72" height="57.55"
+            transform="translate(-3.75 10.62) rotate(-.28)" />
+        <polygon class="cls-8"
+            points="2194.73 743.63 2237.62 743.56 2237.74 800.97 2195.02 801.18 2194.73 743.63" />
+        <polygon class="cls-8"
+            points="2238.91 743.56 2281.64 743.35 2281.92 800.75 2239.04 800.97 2238.91 743.56" />
+        <polygon class="cls-8"
+            points="2062.39 685.58 2105.11 685.37 2105.39 742.77 2062.51 742.99 2062.39 685.58" />
+        <polygon class="cls-8"
+            points="2062.52 744.29 2105.39 744.07 2105.54 801.63 2062.8 801.69 2062.52 744.29" />
+        <rect class="cls-8" x="2283.07" y="743.24" width="42.72" height="57.4"
+            transform="translate(-3.7 11.14) rotate(-.28)" />
+        <rect class="cls-8" x="2282.78" y="684.39" width="42.72" height="57.55"
+            transform="translate(-3.43 11.17) rotate(-.28)" />
+        <path class="cls-8"
+            d="M2195.1,948.07l-43.52.23-.29-57.55,43.52-.23s.01,0,.02,0l43.37-.06.28,57.4-43.37.21Z" />
+        <polygon class="cls-8"
+            points="2150.5 832.04 2193.87 831.83 2194.15 889.22 2150.63 889.45 2107.26 889.66 2106.98 832.26 2150.5 832.04" />
+        <polygon class="cls-8"
+            points="2238.19 889.16 2195.45 889.22 2195.17 831.82 2237.89 831.61 2238.19 889.16" />
+        <polygon class="cls-8"
+            points="2239.19 831.61 2282.06 831.39 2282.21 888.95 2239.48 889.16 2239.19 831.61" />
+        <rect class="cls-8" x="2063.1" y="832.37" width="42.72" height="57.4"
+            transform="translate(-4.13 10.08) rotate(-.28)" />
+        <polygon class="cls-8"
+            points="2063.25 891.17 2106.62 890.96 2149.99 890.75 2150.28 948.3 2106.91 948.51 2106.91 948.51 2063.52 948.57 2063.25 891.17" />
+        <polygon class="cls-8"
+            points="2326.66 947.41 2239.77 947.85 2239.49 890.45 2282.86 890.24 2326.38 890.02 2326.66 947.41" />
+        <polygon class="cls-8"
+            points="2326.38 888.72 2283.5 888.94 2283.36 831.38 2326.08 831.17 2326.38 888.72" />
+        <polygon class="cls-8"
+            points="2063.69 979.36 2147.3 978.94 2147.35 1008.17 2147.38 1028.22 2063.85 1049.39 2063.69 979.36" />
+        <polygon class="cls-8"
+            points="2326.6 982.7 2148.68 1027.89 2148.6 978.93 2326.51 978.08 2326.6 982.7" />
+        <rect class="cls-8" x="1934.68" y="686.01" width="42.72" height="57.4"
+            transform="translate(-3.46 9.54) rotate(-.28)" />
+        <polygon class="cls-8"
+            points="1933.52 743.51 1890.65 743.74 1890.52 686.33 1933.24 686.12 1933.52 743.51" />
+        <polygon class="cls-8"
+            points="1889.35 743.74 1846.63 743.95 1846.33 686.4 1889.22 686.33 1889.35 743.74" />
+        <rect class="cls-8" x="1802.46" y="686.51" width="42.72" height="57.55"
+            transform="translate(-3.45 8.86) rotate(-.28)" />
+        <polygon class="cls-8"
+            points="1801.31 744.17 1758.44 744.39 1758.3 686.83 1801.02 686.62 1801.31 744.17" />
+        <polygon class="cls-8"
+            points="1757.14 744.4 1714.4 744.46 1714.12 687.06 1757 686.84 1757.14 744.4" />
+        <polygon class="cls-8"
+            points="1714.41 745.75 1757.15 745.69 1757.43 803.09 1714.7 803.3 1714.41 745.75" />
+        <rect class="cls-8" x="1758.58" y="745.58" width="42.88" height="57.4"
+            transform="translate(-4.01 9.29) rotate(-.3)" />
+        <rect class="cls-8" x="1802.75" y="745.36" width="42.72" height="57.4"
+            transform="translate(-3.73 8.86) rotate(-.28)" />
+        <rect class="cls-8" x="1846.77" y="745.14" width="42.72" height="57.4"
+            transform="translate(-3.73 9.07) rotate(-.28)" />
+        <polygon class="cls-8"
+            points="1890.65 745.03 1933.53 744.81 1933.82 802.36 1890.93 802.43 1890.65 745.03" />
+        <rect class="cls-8" x="1934.97" y="744.7" width="42.72" height="57.55"
+            transform="translate(-3.75 9.56) rotate(-.28)" />
+        <rect class="cls-8" x="1670.24" y="687.17" width="42.72" height="57.4"
+            transform="translate(-3.44 8.18) rotate(-.28)" />
+        <rect class="cls-8" x="1670.54" y="745.86" width="42.72" height="57.55"
+            transform="translate(-3.73 8.21) rotate(-.28)" />
+        <polygon class="cls-8"
+            points="2021.86 801.93 1979.14 802.14 1978.84 744.59 2021.58 744.53 2021.86 801.93" />
+        <polygon class="cls-8"
+            points="2021.58 743.24 1978.84 743.3 1978.56 685.9 2021.43 685.68 2021.58 743.24" />
+        <rect class="cls-8" x="1715" y="833.84" width="42.72" height="57.55"
+            transform="translate(-4.17 8.45) rotate(-.28)" />
+        <polygon class="cls-8"
+            points="1934.09 890.41 1890.73 890.62 1847.36 890.83 1847.08 833.44 1933.82 833.02 1934.09 890.41" />
+        <polygon class="cls-8"
+            points="1803.19 892.36 1846.06 892.13 1846.19 949.55 1803.47 949.75 1803.19 892.36" />
+        <polygon class="cls-8"
+            points="1847.36 892.13 1890.08 891.92 1890.38 949.47 1847.49 949.54 1847.36 892.13" />
+        <rect class="cls-8" x="1891.53" y="891.81" width="42.72" height="57.55"
+            transform="translate(-4.44 9.29) rotate(-.28)" />
+        <polygon class="cls-8"
+            points="1935.4 891.7 1978.27 891.48 1978.42 949.04 1935.69 949.25 1935.4 891.7" />
+        <polygon class="cls-8"
+            points="1845.78 833.44 1846.06 890.84 1802.53 891.06 1759.16 891.27 1758.87 833.72 1802.39 833.5 1845.78 833.44" />
+        <polygon class="cls-8"
+            points="1670.83 834.15 1713.56 833.95 1713.85 891.49 1670.96 891.57 1670.83 834.15" />
+        <polygon class="cls-8"
+            points="1670.96 892.86 1713.86 892.79 1713.98 950.2 1671.26 950.41 1670.96 892.86" />
+        <polygon class="cls-8"
+            points="1715.28 950.2 1715.15 892.78 1758.52 892.57 1801.89 892.36 1802.17 949.76 1758.8 949.97 1715.28 950.2" />
+        <polygon class="cls-8"
+            points="2022.59 948.81 1979.71 949.04 1979.57 891.47 2003.81 891.44 2022.31 891.42 2022.59 948.81" />
+        <polygon class="cls-8"
+            points="2022.3 890.12 1978.92 890.18 1978.92 890.18 1935.39 890.4 1935.11 833.01 2022.01 832.57 2022.3 890.12" />
+        <polygon class="cls-8"
+            points="1847.65 980.33 1890.53 980.11 1890.65 1037.52 1847.93 1037.73 1847.65 980.33" />
+        <polygon class="cls-8"
+            points="1891.82 980.1 1934.55 979.9 1934.82 1037.29 1891.95 1037.52 1891.82 980.1" />
+        <polygon class="cls-8"
+            points="1671.41 981.05 1758.3 980.61 1758.44 1038.18 1671.68 1038.45 1671.41 981.05" />
+        <polygon class="cls-8"
+            points="1759.74 1038.17 1759.6 980.61 1802.96 980.4 1846.35 980.34 1846.63 1037.74 1803.26 1037.95 1759.74 1038.17" />
+        <polygon class="cls-8"
+            points="2022.9 1029.67 1993.94 1037.17 1936.12 1037.29 1935.84 979.89 2022.74 979.45 2022.9 1029.67" />
+        <polygon class="cls-8"
+            points="1742.24 1068.87 1784.5 1068.71 1784.76 1121.41 1742.54 1132.48 1742.24 1068.87" />
+        <polygon class="cls-8"
+            points="1695.73 1144.67 1679.22 1150.42 1672.06 1135.73 1671.85 1069.24 1740.95 1068.88 1741.07 1095.76 1741.25 1132.82 1704.76 1142.35 1695.73 1144.67" />
+        <polygon class="cls-8"
+            points="1933.31 1082.88 1786.06 1121.07 1785.8 1068.7 1933.27 1068.1 1933.31 1082.88" />
+        <polygon class="cls-9"
+            points="1756.1 352.12 1712.73 352.33 1712.43 294.78 1755.8 294.57 1755.8 294.57 1799.34 294.49 1799.47 351.91 1756.1 352.12" />
+        <polygon class="cls-9"
+            points="1756.32 235.86 1799.04 235.65 1799.34 293.2 1756.45 293.27 1756.33 242.1 1756.32 235.86" />
+        <rect class="cls-9" x="1932.7" y="235.04" width="42.72" height="57.4"
+            transform="translate(-1.26 9.48) rotate(-.28)" />
+        <polygon class="cls-9"
+            points="1931.55 292.54 1888.67 292.77 1888.38 235.22 1931.27 235.14 1931.55 292.54" />
+        <rect class="cls-9" x="1844.51" y="235.32" width="42.72" height="57.55"
+            transform="translate(-1.26 9.05) rotate(-.28)" />
+        <rect class="cls-9" x="1800.49" y="235.54" width="42.72" height="57.55"
+            transform="translate(-1.26 8.84) rotate(-.28)" />
+        <polygon class="cls-9"
+            points="1755.15 293.27 1712.43 293.48 1712.15 236.09 1755.02 235.86 1755.15 293.27" />
+        <rect class="cls-9" x="1668.27" y="236.2" width="42.72" height="57.4"
+            transform="translate(-1.26 8.2) rotate(-.28)" />
+        <polygon class="cls-9"
+            points="1668.41 294.99 1711.14 294.78 1711.43 352.33 1668.56 352.56 1668.41 294.99" />
+        <polygon class="cls-9"
+            points="1800.64 294.49 1843.36 294.28 1843.64 351.68 1800.77 351.9 1800.64 294.49" />
+        <rect class="cls-9" x="1844.8" y="294.17" width="42.72" height="57.4"
+            transform="translate(-1.54 9.06) rotate(-.28)" />
+        <polygon class="cls-9"
+            points="1888.68 294.06 1931.55 293.84 1931.69 351.4 1888.95 351.46 1888.68 294.06" />
+        <polygon class="cls-9"
+            points="1932.85 293.83 1975.57 293.62 1975.87 351.17 1932.99 351.4 1932.85 293.83" />
+        <rect class="cls-9" x="1976.72" y="234.82" width="42.72" height="57.4"
+            transform="translate(-1.25 9.68) rotate(-.28)" />
+        <rect class="cls-9" x="1609.42" y="236.45" width="57.55" height="57.4"
+            transform="translate(-1.33 8.35) rotate(-.29)" />
+        <polygon class="cls-9"
+            points="1609.57 295.29 1667.12 295 1667.23 338.54 1667.26 352.56 1609.85 352.69 1609.57 295.29" />
+        <rect class="cls-9" x="1977.01" y="293.51" width="42.72" height="57.55"
+            transform="translate(-1.62 10.2) rotate(-.29)" />
+        <rect class="cls-9" x="2192.61" y="233.86" width="42.88" height="57.4"
+            transform="translate(-1.33 11.48) rotate(-.3)" />
+        <rect class="cls-9" x="2148.59" y="234.08" width="42.72" height="57.4"
+            transform="translate(-1.25 10.53) rotate(-.28)" />
+        <rect class="cls-9" x="2104.57" y="234.29" width="42.72" height="57.4"
+            transform="translate(-1.26 10.36) rotate(-.28)" />
+        <polygon class="cls-9"
+            points="2104.71 293.09 2147.44 292.88 2147.73 350.43 2104.84 350.5 2104.71 293.09" />
+        <rect class="cls-9" x="2148.88" y="292.77" width="42.72" height="57.55"
+            transform="translate(-1.53 10.53) rotate(-.28)" />
+        <polygon class="cls-9"
+            points="2192.75 292.66 2235.63 292.44 2235.77 350 2193.05 350.21 2192.75 292.66" />
+        <polygon class="cls-9"
+            points="2060.39 234.46 2103.14 234.4 2103.41 291.8 2060.54 292.02 2060.39 234.46" />
+        <polygon class="cls-9"
+            points="2060.54 293.32 2103.42 293.09 2103.55 350.51 2060.82 350.71 2060.54 293.32" />
+        <polygon class="cls-9"
+            points="2294.61 349.7 2237.07 350 2236.96 306.46 2236.92 292.43 2294.34 292.3 2294.61 349.7" />
+        <polygon class="cls-9"
+            points="2294.33 291.01 2236.92 291.14 2236.64 233.74 2294.04 233.46 2294.33 291.01" />
+        <polygon class="cls-9"
+            points="1976.15 440.52 1976.44 498.07 1933.72 498.28 1933.42 440.73 1962.12 440.59 1964.37 440.58 1976.15 440.52" />
+        <polygon class="cls-9"
+            points="1756.83 499 1713.3 499.22 1713.16 441.66 1714.25 441.66 1756.54 441.6 1756.55 441.6 1785.89 441.46 1785.89 441.46 1799.92 441.39 1800.2 498.79 1756.83 499" />
+        <polygon class="cls-9"
+            points="1873.43 439.73 1830.95 439.94 1830.56 439.95 1830.41 382.38 1873.15 382.33 1873.43 439.73" />
+        <polygon class="cls-9"
+            points="1829.26 439.95 1800.56 440.09 1786.54 440.16 1786.26 382.61 1829.12 382.39 1829.26 439.95" />
+        <polygon class="cls-9"
+            points="1785.24 440.17 1742.5 440.22 1742.22 382.82 1784.95 382.62 1785.24 440.17" />
+        <polygon class="cls-9"
+            points="1801.21 441.38 1829.91 441.25 1831.63 441.24 1843.94 441.18 1844.22 498.57 1801.49 498.78 1801.21 441.38" />
+        <polygon class="cls-9"
+            points="1845.23 441.17 1887.57 440.95 1888.11 440.95 1888.39 498.34 1845.51 498.57 1845.23 441.17" />
+        <polygon class="cls-9"
+            points="1889.41 440.94 1932.13 440.73 1932.42 498.28 1889.68 498.34 1889.41 440.94" />
+        <polygon class="cls-9"
+            points="1961.34 381.89 1961.47 439.3 1932.77 439.44 1888.75 439.65 1887.95 439.65 1874.73 439.72 1874.45 382.32 1917.82 382.11 1961.34 381.89" />
+        <polygon class="cls-9"
+            points="1668.7 383.2 1740.93 382.83 1741.21 440.23 1714.03 440.36 1712.51 440.37 1712.51 440.37 1668.98 440.59 1668.7 383.2" />
+        <polygon class="cls-9"
+            points="1668.99 441.89 1711.87 441.67 1712.01 499.23 1669.28 499.44 1668.99 441.89" />
+        <polygon class="cls-9"
+            points="2020.61 497.84 1977.73 498.06 1977.44 440.51 2013.86 440.32 2020.32 440.29 2020.61 497.84" />
+        <polygon class="cls-9"
+            points="2020.31 439 2011.46 439.04 1963.3 439.29 1962.76 439.29 1962.64 381.88 2020.03 381.6 2020.31 439" />
+        <polygon class="cls-9"
+            points="2236.21 438.19 2193.47 438.25 2193.2 380.85 2235.92 380.64 2236.21 438.19" />
+        <polygon class="cls-9"
+            points="2192.18 438.25 2149.3 438.47 2149.18 381.06 2191.9 380.86 2192.18 438.25" />
+        <polygon class="cls-9"
+            points="2148.01 438.48 2105.28 438.69 2105 381.29 2147.88 381.07 2148.01 438.48" />
+        <polygon class="cls-9"
+            points="2105.29 439.98 2148.01 439.78 2148.31 497.32 2105.57 497.38 2105.29 439.98" />
+        <rect class="cls-9" x="2149.45" y="439.66" width="42.88" height="57.55"
+            transform="translate(-2.4 11.26) rotate(-.3)" />
+        <polygon class="cls-9"
+            points="2193.48 439.54 2236.22 439.49 2236.5 496.88 2193.77 497.09 2193.48 439.54" />
+        <polygon class="cls-9"
+            points="2060.97 381.35 2103.71 381.3 2103.99 438.69 2061.26 438.9 2060.97 381.35" />
+        <rect class="cls-9" x="2061.41" y="440.09" width="42.72" height="57.4"
+            transform="translate(-2.25 10.09) rotate(-.28)" />
+        <polygon class="cls-9"
+            points="2295.19 496.6 2237.79 496.88 2237.51 439.48 2295.06 439.19 2295.19 496.6" />
+        <rect class="cls-9" x="2237.36" y="380.49" width="57.55" height="57.55"
+            transform="translate(-2.06 11.57) rotate(-.29)" />
+        <polygon class="cls-9"
+            points="1756.47 587.2 1713.73 587.26 1713.45 529.86 1756.33 529.64 1756.47 587.2" />
+        <polygon class="cls-9"
+            points="1713.74 588.56 1756.47 588.5 1756.75 645.9 1714.03 646.11 1713.74 588.56" />
+        <rect class="cls-9" x="1845.81" y="529.26" width="42.72" height="57.4"
+            transform="translate(-2.68 9.06) rotate(-.28)" />
+        <polygon class="cls-9"
+            points="1845.96 588.05 1888.68 587.85 1888.98 645.39 1846.24 645.45 1845.96 588.05" />
+        <polygon class="cls-9"
+            points="1933.5 586.32 1889.97 586.54 1889.69 529.15 1976.59 528.71 1976.87 586.11 1955.2 586.21 1933.5 586.32" />
+        <polygon class="cls-9"
+            points="2020.9 586.05 1978.16 586.1 1977.88 528.7 2020.61 528.5 2020.9 586.05" />
+        <polygon class="cls-9"
+            points="1844.38 529.37 1844.66 586.76 1839.74 586.79 1801.29 586.97 1758.91 587.19 1757.76 587.2 1757.62 529.63 1800.99 529.42 1844.38 529.37" />
+        <rect class="cls-9" x="1669.57" y="529.97" width="42.72" height="57.4"
+            transform="translate(-2.68 8.17) rotate(-.28)" />
+        <rect class="cls-9" x="1669.86" y="588.66" width="42.72" height="57.55"
+            transform="translate(-2.97 8.2) rotate(-.28)" />
+        <polygon class="cls-9"
+            points="1758.05 645.89 1757.77 588.49 1844.67 588.06 1844.94 645.46 1801.42 645.68 1758.05 645.89" />
+        <polygon class="cls-9"
+            points="1933 645.18 1890.27 645.39 1889.98 587.84 1932.85 587.62 1933 645.18" />
+        <polygon class="cls-9"
+            points="1934.15 587.62 1976.87 587.4 1977.17 644.95 1934.29 645.17 1934.15 587.62" />
+        <polygon class="cls-9"
+            points="2021.19 644.74 1978.46 644.95 1978.17 587.4 2020.91 587.34 2021.19 644.74" />
+        <polygon class="cls-9"
+            points="2106.02 586.87 2148.74 586.66 2149.03 644.21 2106.16 644.43 2106.02 586.87" />
+        <polygon class="cls-9"
+            points="2150.04 586.65 2193.4 586.44 2193.4 586.44 2236.94 586.37 2237.07 643.78 2150.33 644.2 2150.04 586.65" />
+        <polygon class="cls-9"
+            points="2236.94 585.07 2193.4 585.14 2193.4 585.15 2150.03 585.36 2149.75 527.96 2236.65 527.52 2236.94 585.07" />
+        <rect class="cls-9" x="2105.87" y="528.07" width="42.72" height="57.4"
+            transform="translate(-2.68 10.33) rotate(-.28)" />
+        <polygon class="cls-9"
+            points="2295.92 643.48 2238.37 643.77 2238.24 586.36 2295.64 586.08 2295.92 643.48" />
+        <rect class="cls-9" x="2238.09" y="527.38" width="57.4" height="57.55"
+            transform="translate(-2.67 10.99) rotate(-.28)" />
+        <polygon class="cls-9"
+            points="2061.71 528.39 2104.44 528.18 2104.72 585.58 2061.84 585.8 2061.71 528.39" />
+        <polygon class="cls-9"
+            points="2061.85 587.09 2104.72 586.87 2104.86 644.44 2062.12 644.49 2061.85 587.09" />
+        <polygon class="cls-9"
+            points="2207.33 134.14 2242.66 133.27 2243.02 203.07 2207.68 203.17 2207.33 134.14" />
+        <polygon class="cls-9"
+            points="2060.25 203.82 2059.89 137.83 2132.27 136.47 2132.62 203.5 2097.85 203.72 2060.25 203.82" />
+        <polygon class="cls-9"
+            points="2133.71 136.44 2173.16 135.28 2173.16 135.28 2173.16 135.28 2205.89 134.19 2206.25 203.18 2173.4 203.3 2134.06 203.5 2133.71 136.44" />
+        <polygon class="cls-9"
+            points="2293.89 202.82 2244.45 203.07 2244.09 133.24 2293.63 131.7 2293.89 202.82" />
+        <polygon class="cls-9"
+            points="1971.21 141.11 1990.62 140.06 1996.52 139.78 2029.32 138.78 2029.61 203.96 1971.75 204.29 1971.21 141.11" />
+        <polygon class="cls-9"
+            points="1950.53 142.07 1969.91 141.18 1970.45 204.29 1950.8 204.31 1910.25 204.55 1910.04 143.23 1917.2 143.08 1950.53 142.07" />
+        <polygon class="cls-9"
+            points="1908.74 143.26 1908.95 204.55 1867.91 204.68 1867.91 204.68 1867.91 204.68 1826.11 204.89 1825.96 145.75 1867.67 144.32 1867.67 144.32 1876.55 144.21 1908.74 143.26" />
+        <polygon class="cls-9"
+            points="1824.67 145.79 1824.81 204.9 1738.69 205.26 1738.53 164.22 1738.47 148.46 1792.81 146.86 1824.67 145.79" />
+        <polygon class="cls-9"
+            points="1737.17 148.5 1737.39 205.26 1647.84 205.66 1647.54 151.21 1705.76 149.37 1737.17 148.5" />
+        <polygon class="cls-9"
+            points="1552.57 154.06 1615.31 152.23 1646.25 151.25 1646.29 159.55 1646.54 205.66 1552.78 206.17 1552.57 154.06" />
+    </g>
+    <g id="numeros_R">
+        <text class="cls-7" transform="translate(2263.15 167.56)">
+            <tspan x="0" y="0">80</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2219.94 169.36)">
+            <tspan x="0" y="0">81</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2182.27 169.49)">
+            <tspan x="0" y="0">82</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2146.28 170.7)">
+            <tspan x="0" y="0">83</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2108.03 172.12)">
+            <tspan x="0" y="0">84</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2071.26 173.52)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1993.27 174.3)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1933.97 176.24)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1860.2 176.24)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1772.96 178.97)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1683.17 180.01)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1592.01 180.01)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1632.13 268.7)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1682.96 269.61)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1727.61 266.33)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1770.7 267.6)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1814.67 267.48)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1861.27 267.48)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1905.81 267.61)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1947.35 266.35)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1991.11 266.48)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1993.14 321.52)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1949.2 321.07)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1905.58 323.32)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1860.11 323.57)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1816.28 321.62)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1770.21 321.62)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1728.05 321.62)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1684.2 322.08)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1632.13 323.95)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1698.75 414.4)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1757.9 412.75)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1803.54 412.75)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1847.53 412.04)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1891.47 411.58)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1935.37 412.31)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1987.83 411.71)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2076.45 409.15)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2121.96 410.64)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2165.95 409.26)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2207.75 409.89)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2260.7 409.5)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2260.15 466.14)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2210.24 465.97)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2164.01 466.99)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2121.01 467.67)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2076.38 468.85)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2260.15 558.63)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2210.24 558.46)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2164.01 559.47)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2121.01 560.16)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2076.38 561.34)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2210.24 615.01)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2164.01 616.03)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2121.01 616.72)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2076.38 617.89)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1999.34 616.35)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1949.42 616.19)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1903.19 617.2)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1860.2 617.89)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1815.56 619.06)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1999.34 561.05)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1949.42 560.89)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1903.19 561.9)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1860.2 562.59)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1815.56 563.77)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1774.82 561.9)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1731.83 562.59)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1687.19 563.77)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1774.82 615.42)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1731.83 616.11)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1687.19 617.29)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1994.97 715.13)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1953.08 715.56)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1908.1 715.62)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1863.14 715.76)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1817.54 715.03)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1774.82 716.23)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1731.83 716.92)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1687.19 718.1)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1994.97 775.08)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1953.08 775.52)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1908.1 775.57)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1863.14 775.72)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1817.54 774.99)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1774.82 776.19)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1731.83 776.88)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1687.19 778.06)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1994.97 868.03)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1953.08 868.47)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1908.1 868.52)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1863.14 868.67)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1817.54 867.93)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1774.82 869.14)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1731.83 869.83)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1687.19 871.01)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1994.97 923.37)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1953.08 923.8)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1908.1 923.86)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1863.14 924)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1817.54 923.27)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1774.82 924.47)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1731.83 925.16)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1687.19 926.34)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2301.99 923.86)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2257.02 924)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2211.42 923.27)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2168.71 924.47)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2125.71 925.16)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2081.08 926.34)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2301.99 864.15)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2257.02 864.3)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2211.42 863.56)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2168.71 864.77)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2125.71 865.46)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2081.08 866.64)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2301.99 775.57)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2257.02 775.72)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2211.42 774.99)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2168.71 776.19)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2125.71 776.88)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2081.08 778.06)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-6" transform="translate(2292.65 717.18)">
+            <tspan x="0" y="0">0602001</tspan>
+        </text>
+        <text class="cls-6" transform="translate(2251.77 615.89)">
+            <tspan x="0" y="0">0601001</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2257.02 717.44)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2211.42 716.71)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2168.71 717.91)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2125.71 718.6)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2081.08 719.78)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2173.11 1005.3)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(2100.52 1006.48)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1970.3 1011.19)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1908.1 1011.77)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1863.14 1011.92)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1817.54 1011.19)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1774.82 1012.39)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1810.05 1096.79)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1757.87 1102.64)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1701.88 1105.54)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+        <text class="cls-7" transform="translate(1708.89 1011.92)">
+            <tspan x="0" y="0">85</tspan>
+        </text>
+    </g>
+    <g id="PERIMETRO_DORADO">
+        <path class="cls-3" d="M205.15,793.57s0-.02,0-.02v.02Z" />
+        <path class="cls-4"
+            d="M2401.43,552.38l-1.39-426.23-39.35,1.77-37.04,1.66-827.47,26.16-27.6-7.37-161.69-11.37s-131.44-49.08-131.44-49.08c0,0-343.46-25.24-408.57-31.34-.03,0-72.81-11.56-72.85-11.56,0,0-294.24-26.61-347.13-19.88.01,0-148.77.61-210.43.88,0,0-108.94-7.15-108.94-7.15,0,0,16.43,82.52,37.27,179.43,1.4,6.52,15.57,54.22,21.79,100.1,2.89,21.34,5.25,20.61,11.74,48.51,2.05,8.83,3.18,13.93,13.3,60.63,6.31,29.12,9.47,43.68,9.57,44.17,1.86,9.13,4.09,20.51,16.34,88.42,2.94,16.29,2.79,15.61,3.02,16.76,7.78,38.78,14.74,45.64,23.07,78.73,6.38,25.33,3.82,27.32,12.59,63.21,2.22,9.08,4.76,19.3,8.94,33.01,7.38,24.2,11.43,31.43,17.95,55.59,3.15,11.66,2.1,6.48,2.03,6.14v-.02s0,0,0,.02l10.48,51.4s13.57-12.33,21.47-14.81c84.62-26.58,76.78-17.05,113.91-30.36,32.11-11.51,51.6-18,93.94-30.22,42.16-12.17,85.93-29.11,85.93-29.11l132.56-35.99,113.65-14.41,160.55-51.14,149.55,18.06,2.66,21.75s28.84,120.47,28.84,120.47c10.43,30.65,77.2,237.88,77.2,237.88l105.17,149.64s94.85-14.49,129.04-19.7c49.97-2.37,69.55-4.14,142.47-10.43,62.47-6.13,87.46-4.49,106.42-4.83,245.35-63.53,724.43-187.33,724.43-187.33l-1.27-191.7" />
+        <line class="cls-1" x1="2401.43" y1="552.38" x2="2401.44" y2="554.88" />
+        <line class="cls-2" x1="2401.45" y1="559.89" x2="2402.12" y2="767.73" />
+        <line class="cls-5" x1="2402.13" y1="770.24" x2="2402.13" y2="772.74" />
+    </g>
+</svg>
