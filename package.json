@@ -4,11 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "extract:coords": "node scripts/extractCoords.js"
+    "coords": "node scripts/extractCoords.js",
+    "dev": "npm run coords && vite",
+    "build": "npm run coords && vite build",
+    "preview": "npm run coords && vite preview"
   },
   "dependencies": {
     "canvg": "^4.0.3",

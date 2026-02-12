@@ -8,7 +8,20 @@
       "location": "Mariquita, Tolima",
       "image": "/rio.webp",
       "sheetUrl": "https://script.google.com/macros/s/AKfycby_A-J3UmhniywRJysaoGV1Xb5DGOORQQaxnjrJJiVT5eJz82_F6ANqi0Tn_nxLEE5b/exec?proyecto=RIO CLARO",
-      "coordsFile": "/coords.json",
+      "coordsFile": "/coords/plano.json",
+      "sectors": [
+        { "id": "rio-medina", "name": "Río Medina", "color": "#22C55E", "coords": { "x": 1510, "y": 130, "w": 850, "h": 600 } },
+        { "id": "rio-lagunilla", "name": "Río Lagunilla", "color": "#3B82F6", "coords": { "x": 1600, "y": 650, "w": 900, "h": 600 } }
+      ]
+    },{
+      "id": "canon-arizona",
+      "planImage": "/cañon.png",
+      "planSize": { "w": 2551.18, "h": 1699.55 },
+      "name": "Cañon de Arizona",
+      "location": "Mariquita, Tolima",
+      "image": "/rio.webp",
+      "sheetUrl": "https://script.google.com/macros/s/AKfycby_A-J3UmhniywRJysaoGV1Xb5DGOORQQaxnjrJJiVT5eJz82_F6ANqi0Tn_nxLEE5b/exec?proyecto=CAÑON",
+      "coordsFile": "/coords/plano2.json",
       "sectors": [
         { "id": "rio-medina", "name": "Río Medina", "color": "#22C55E", "coords": { "x": 1510, "y": 130, "w": 850, "h": 600 } },
         { "id": "rio-lagunilla", "name": "Río Lagunilla", "color": "#3B82F6", "coords": { "x": 1600, "y": 650, "w": 900, "h": 600 } }

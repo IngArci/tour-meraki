@@ -1,47 +1,86 @@
-// scripts/extractCoords.js
 import fs from "fs";
+import path from "path";
 
-const inputPath = "./public/plano.svg";
-const outputPath = "./public/coords.json";
+// Configuración
+const planosDir = "./public/planos";      
+const outputDir = "./public/coords";      
 
-// Extrae translate(x y)
+
+if (!fs.existsSync(planosDir)) {
+  fs.mkdirSync(planosDir, { recursive: true });
+}
+if (!fs.existsSync(outputDir)) {
+  fs.mkdirSync(outputDir, { recursive: true });
+}
+
+
 function parseTranslate(transform) {
   const m = /translate\(([-\d.]+)\s+([-\d.]+)\)/.exec(transform);
   if (!m) return null;
   return { x: Number(m[1]), y: Number(m[2]) };
 }
 
+// Normaliza código
 function normalizeCode(code) {
   return String(code).trim().padStart(7, "0");
 }
 
-const svg = fs.readFileSync(inputPath, "utf8");
-
-// Regex básico para tu patrón <text ... transform="translate(x y)"> ... <tspan>CODE</tspan>
 const regex =
   /<text[^>]*transform="([^"]+)"[^>]*>\s*<tspan[^>]*>\s*([0-9]+)\s*<\/tspan>\s*<\/text>/g;
 
-const coords = [];
-let match;
 
-while ((match = regex.exec(svg)) !== null) {
-  const transform = match[1];
-  const rawCode = match[2];
+const svgFiles = fs.readdirSync(planosDir).filter((f) => f.endsWith(".svg"));
 
-  const pos = parseTranslate(transform);
-  if (!pos) continue;
-
-  coords.push({
-    code: normalizeCode(rawCode),
-    x: pos.x,
-    y: pos.y,
-  });
+if (svgFiles.length === 0) {
+  console.error(`❌ No hay archivos .svg en ${planosDir}`);
+  process.exit(1);
 }
 
-// Elimina duplicados por si hay repetidos
-const unique = new Map();
-for (const c of coords) unique.set(c.code, c);
+console.log(`📁 Encontrados ${svgFiles.length} planos SVG:`);
+svgFiles.forEach((f) => console.log(`   - ${f}`));
 
-fs.writeFileSync(outputPath, JSON.stringify([...unique.values()], null, 2), "utf8");
+svgFiles.forEach((svgFile) => {
+  const inputPath = path.join(planosDir, svgFile);
+  const outputFile = svgFile.replace(".svg", ".json");
+  const outputPath = path.join(outputDir, outputFile);
 
-console.log(`✅ coords.json generado con ${unique.size} lotes -> ${outputPath}`);
+  console.log(`\n🔄 Procesando ${svgFile}...`);
+
+  try {
+    const svg = fs.readFileSync(inputPath, "utf8");
+
+    const coords = [];
+    let match;
+
+    while ((match = regex.exec(svg)) !== null) {
+      const transform = match[1];
+      const rawCode = match[2];
+
+      const pos = parseTranslate(transform);
+      if (!pos) continue;
+
+      coords.push({
+        code: normalizeCode(rawCode),
+        x: pos.x,
+        y: pos.y,
+      });
+    }
+
+    
+    const unique = new Map();
+    coords.forEach((c) => unique.set(c.code, c));
+
+   
+    fs.writeFileSync(
+      outputPath,
+      JSON.stringify([...unique.values()], null, 2),
+      "utf8"
+    );
+
+    console.log(`✅ ${unique.size} lotes → ${outputFile}`);
+  } catch (error) {
+    console.error(`❌ Error procesando ${svgFile}:`, error.message);
+  }
+});
+
+console.log(`\n🎉 Listo! Archivos en ${outputDir}`);

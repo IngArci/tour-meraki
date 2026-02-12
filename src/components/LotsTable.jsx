@@ -13,7 +13,7 @@ export default function LotsTable({
   onSelectSector,
   onViewAll,
 
-  selectedCode = null,
+  selectedCode = null
 }) {
   const isMobile = window.innerWidth < 768;
 
@@ -25,7 +25,7 @@ export default function LotsTable({
         padding: 14,
         boxShadow: "0 10px 30px rgba(0,0,0,.12)",
         maxHeight: isMobile ? "45vh" : "calc(100vh - 32px - 70px)",
-        overflow: "hidden",
+        overflow: "hidden"
       }}
     >
       <div style={{ fontWeight: 900, fontSize: 16 }}>Listado de Lotes</div>
@@ -36,7 +36,7 @@ export default function LotsTable({
             marginTop: 12,
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
-            gap: 8,
+            gap: 8
           }}
         >
           {sectors.map((s) => {
@@ -48,13 +48,11 @@ export default function LotsTable({
                 style={{
                   padding: "10px 12px",
                   borderRadius: 12,
-                  border: active
-                    ? `2px solid ${s.color || "#2563EB"}`
-                    : "1px solid #E5E7EB",
-                  background: active ? s.color || "#2563EB" : "white",
+                  border: active ? `2px solid ${s.color || "#2563EB"}` : "1px solid #E5E7EB",
+                  background: active ? (s.color || "#2563EB") : "white",
                   color: active ? "white" : "#111827",
                   cursor: "pointer",
-                  fontWeight: 900,
+                  fontWeight: 900
                 }}
               >
                 {s.name}
@@ -71,7 +69,7 @@ export default function LotsTable({
               background: "#F3F4F6",
               color: "#111827",
               cursor: "pointer",
-              fontWeight: 900,
+              fontWeight: 900
             }}
           >
             Ver todo
@@ -79,34 +77,18 @@ export default function LotsTable({
         </div>
       )}
 
-      <div
-        style={{
-          display: "flex",
-          gap: 8,
-          marginTop: 12,
-          flexDirection: isMobile ? "column" : "row",
-        }}
-      >
+      <div style={{ display: "flex", gap: 8, marginTop: 12, flexDirection: isMobile ? "column" : "row" }}>
         <input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Buscar código o sector..."
-          style={{
-            flex: 1,
-            padding: "10px 12px",
-            borderRadius: 10,
-            border: "1px solid #E5E7EB",
-          }}
+          style={{ flex: 1, padding: "10px 12px", borderRadius: 10, border: "1px solid #E5E7EB" }}
         />
 
         <select
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          style={{
-            padding: "10px 12px",
-            borderRadius: 10,
-            border: "1px solid #E5E7EB",
-          }}
+          style={{ padding: "10px 12px", borderRadius: 10, border: "1px solid #E5E7EB" }}
         >
           <option value="TODOS">Todos</option>
           <option value="DISPONIBLE">Disponible</option>
@@ -115,40 +97,13 @@ export default function LotsTable({
         </select>
       </div>
 
-      <div
-        style={{
-          marginTop: 12,
-          maxHeight: isMobile ? "28vh" : "70vh",
-          overflow: "auto",
-        }}
-      >
+      <div style={{ marginTop: 12, maxHeight: isMobile ? "28vh" : "70vh", overflow: "auto" }}>
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>
             <tr style={{ textAlign: "left", fontSize: 12, color: "#374151" }}>
-              <th
-                style={{
-                  padding: "10px 8px",
-                  borderBottom: "1px solid #E5E7EB",
-                }}
-              >
-                CÓDIGO
-              </th>
-              <th
-                style={{
-                  padding: "10px 8px",
-                  borderBottom: "1px solid #E5E7EB",
-                }}
-              >
-                ÁREA
-              </th>
-              <th
-                style={{
-                  padding: "10px 8px",
-                  borderBottom: "1px solid #E5E7EB",
-                }}
-              >
-                ESTADO
-              </th>
+              <th style={{ padding: "10px 8px", borderBottom: "1px solid #E5E7EB" }}>CÓDIGO</th>
+              <th style={{ padding: "10px 8px", borderBottom: "1px solid #E5E7EB" }}>ÁREA</th>
+              <th style={{ padding: "10px 8px", borderBottom: "1px solid #E5E7EB" }}>ESTADO</th>
             </tr>
           </thead>
 
@@ -162,32 +117,16 @@ export default function LotsTable({
                   onClick={() => onSelect(l)}
                   style={{
                     cursor: "pointer",
-                    background: active ? "#EFF6FF" : "transparent",
+                    background: active ? "#EFF6FF" : "transparent"
                   }}
                 >
-                  <td
-                    style={{
-                      padding: "10px 8px",
-                      borderBottom: "1px solid #F3F4F6",
-                      fontWeight: 800,
-                    }}
-                  >
+                  <td style={{ padding: "10px 8px", borderBottom: "1px solid #F3F4F6", fontWeight: 800 }}>
                     {l.code}
                   </td>
-                  <td
-                    style={{
-                      padding: "10px 8px",
-                      borderBottom: "1px solid #F3F4F6",
-                    }}
-                  >
+                  <td style={{ padding: "10px 8px", borderBottom: "1px solid #F3F4F6" }}>
                     {l.areaM2 ?? "—"}
                   </td>
-                  <td
-                    style={{
-                      padding: "10px 8px",
-                      borderBottom: "1px solid #F3F4F6",
-                    }}
-                  >
+                  <td style={{ padding: "10px 8px", borderBottom: "1px solid #F3F4F6" }}>
                     {String(l.status || "").trim()}
                   </td>
                 </tr>

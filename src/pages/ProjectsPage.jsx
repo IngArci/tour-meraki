@@ -14,7 +14,6 @@ export default function ProjectsPage() {
         setLoading(true);
         const res = await fetch("/projects.json", { cache: "no-store" });
         const data = await res.json();
-
         const list = Array.isArray(data) ? data : data?.projects || [];
         if (alive) setProjects(Array.isArray(list) ? list : []);
       } catch (e) {
@@ -37,28 +36,15 @@ export default function ProjectsPage() {
         padding: "24px 16px",
         maxWidth: 1400,
         margin: "0 auto",
-        background: "linear-gradient(135deg, #19191a 0%, #f3d425 100%)",
-        minHeight: "100vh",
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        minHeight: "100vh"
       }}
     >
       <header style={{ textAlign: "center", color: "white", marginBottom: 24 }}>
-        <h1
-          style={{
-            fontSize: "clamp(32px, 5vw, 48px)",
-            margin: 0,
-            fontWeight: 800,
-          }}
-        >
-          Clubes de Campo
+        <h1 style={{ fontSize: "clamp(32px, 5vw, 48px)", margin: 0, fontWeight: 800 }}>
+          Clubes de Campo Premium
         </h1>
-        <p
-          style={{
-            fontSize: "clamp(16px, 3vw, 20px)",
-            opacity: 0.9,
-            maxWidth: 600,
-            margin: "16px auto 0",
-          }}
-        >
+        <p style={{ fontSize: "clamp(16px, 3vw, 20px)", opacity: 0.9, maxWidth: 600, margin: "16px auto 0" }}>
           Elige un club para ver sus sectores
         </p>
       </header>
@@ -78,7 +64,7 @@ export default function ProjectsPage() {
             padding: 16,
             color: "white",
             maxWidth: 760,
-            margin: "0 auto",
+            margin: "0 auto"
           }}
         >
           No hay proyectos. Revisa <b>public/projects.json</b>.
@@ -90,16 +76,14 @@ export default function ProjectsPage() {
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
           gap: 24,
-          marginTop: 24,
+          marginTop: 24
         }}
       >
         {projects.map((p) => (
           <ProjectCard
             key={p.id}
             project={p}
-            onClick={() =>
-              navigate(`/tour?project=${encodeURIComponent(p.id)}`)
-            }
+            onClick={() => navigate(`/tour?project=${encodeURIComponent(p.id)}`)}
           />
         ))}
       </div>
@@ -120,11 +104,9 @@ function ProjectCard({ project, onClick }) {
         boxShadow: "0 25px 50px rgba(0,0,0,.15)",
         cursor: "pointer",
         transition: "transform .2s ease",
-        position: "relative",
+        position: "relative"
       }}
-      onMouseEnter={(e) =>
-        (e.currentTarget.style.transform = "translateY(-6px)")
-      }
+      onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-6px)")}
       onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
     >
       <div
@@ -136,7 +118,7 @@ function ProjectCard({ project, onClick }) {
           padding: "8px 12px",
           borderRadius: 20,
           fontSize: 12,
-          fontWeight: 800,
+          fontWeight: 900
         }}
       >
         {sectorsCount} sectores
@@ -146,23 +128,13 @@ function ProjectCard({ project, onClick }) {
         <img
           src={project.image}
           alt={project.name || "Proyecto"}
-          style={{
-            width: "100%",
-            height: 220,
-            objectFit: "cover",
-            display: "block",
-          }}
+          style={{ width: "100%", height: 220, objectFit: "cover", display: "block" }}
           onError={(e) => {
             e.currentTarget.style.display = "none";
           }}
         />
       ) : (
-        <div
-          style={{
-            height: 220,
-            background: "linear-gradient(135deg,#0B4D8B,#22C55E)",
-          }}
-        />
+        <div style={{ height: 220, background: "linear-gradient(135deg,#0B4D8B,#22C55E)" }} />
       )}
 
       <div style={{ padding: 20 }}>
@@ -172,15 +144,8 @@ function ProjectCard({ project, onClick }) {
         <div style={{ marginTop: 8, color: "#6B7280", fontSize: 14 }}>
           📍 {project?.location ?? "—"}
         </div>
-        <div
-          style={{
-            marginTop: 10,
-            color: "#0d0d0e",
-            fontWeight: 900,
-            fontSize: 14,
-          }}
-        >
-          Ver sectores
+        <div style={{ marginTop: 10, color: "#2563EB", fontWeight: 900, fontSize: 14 }}>
+          Ver sectores →
         </div>
       </div>
     </div>

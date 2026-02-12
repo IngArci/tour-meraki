@@ -42,9 +42,7 @@ export default function TourPage() {
         const res = await fetch("/projects.json", { cache: "no-store" });
         const data = await res.json();
         const list = Array.isArray(data) ? data : data?.projects || [];
-        const found = (Array.isArray(list) ? list : []).find(
-          (p) => p.id === projectId,
-        );
+        const found = (Array.isArray(list) ? list : []).find((p) => p.id === projectId);
         if (alive) setProject(found || null);
       } catch (e) {
         console.error(e);
@@ -116,9 +114,7 @@ export default function TourPage() {
       const q = search.trim();
       const matchesSearch = q
         ? String(l.code).includes(q) ||
-          String(l.sector || "")
-            .toUpperCase()
-            .includes(q.toUpperCase())
+          String(l.sector || "").toUpperCase().includes(q.toUpperCase())
         : true;
 
       return matchesFilter && matchesSearch;
@@ -137,9 +133,7 @@ export default function TourPage() {
   }, [selected]);
 
   const onSelectSector = (id) => {
-    navigate(
-      `/tour?project=${encodeURIComponent(projectId)}&sector=${encodeURIComponent(id)}`,
-    );
+    navigate(`/tour?project=${encodeURIComponent(projectId)}&sector=${encodeURIComponent(id)}`);
   };
 
   const onViewAll = () => {
@@ -154,7 +148,7 @@ export default function TourPage() {
       filename: `plano-${projectId || "proyecto"}-${sectorId || "general"}.pdf`,
       orientation: "landscape",
       format: "a4",
-      scale: 2,
+      scale: 2
     });
   };
 
@@ -172,7 +166,7 @@ export default function TourPage() {
               background: "#0B4D8B",
               color: "white",
               cursor: "pointer",
-              fontWeight: 900,
+              fontWeight: 900
             }}
           >
             Ir a Clubes
@@ -195,7 +189,7 @@ export default function TourPage() {
         gap: isMobile ? 12 : 16,
         padding: isMobile ? 8 : 16,
         height: "100vh",
-        boxSizing: "border-box",
+        boxSizing: "border-box"
       }}
     >
       <header
@@ -208,14 +202,12 @@ export default function TourPage() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          gap: 12,
+          gap: 12
         }}
       >
         <div>
           <div style={{ fontWeight: 900, fontSize: 18 }}>{project.name}</div>
-          <div style={{ opacity: 0.9, fontSize: 13 }}>
-            {project.location ?? ""}
-          </div>
+          <div style={{ opacity: 0.9, fontSize: 13 }}>{project.location ?? ""}</div>
         </div>
 
         <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
@@ -228,7 +220,7 @@ export default function TourPage() {
               background: "rgba(255,255,255,.15)",
               color: "white",
               cursor: "pointer",
-              fontWeight: 900,
+              fontWeight: 900
             }}
           >
             Descargar PDF
@@ -243,7 +235,7 @@ export default function TourPage() {
               background: "rgba(255,255,255,.15)",
               color: "white",
               cursor: "pointer",
-              fontWeight: 900,
+              fontWeight: 900
             }}
           >
             ← Clubes
@@ -271,12 +263,10 @@ export default function TourPage() {
         selected={selected}
         onSelect={setSelected}
         viewBox={viewBox}
-        planImage={project.planImage}
+        planImage={project.planImage || "/plano-color.jpeg"}
       />
 
-      {selected && (
-        <LotModal lot={selected} onClose={() => setSelected(null)} />
-      )}
+      {selected && <LotModal lot={selected} onClose={() => setSelected(null)} />}
     </div>
   );
 }
