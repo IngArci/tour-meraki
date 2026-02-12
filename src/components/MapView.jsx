@@ -3,8 +3,8 @@ import React from "react";
 function statusColor(status) {
   const s = String(status || "").toUpperCase().trim();
   if (s === "DISPONIBLE") return "#22C55E";
+  if (s === "GERENCIA") return "#446fe4";
   if (s === "SEPARADO") return "#F59E0B";
-  if (s === "VENDIDO") return "#EF4444";
   return "#6B7280";
 }
 

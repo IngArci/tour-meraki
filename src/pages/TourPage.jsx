@@ -121,16 +121,7 @@ export default function TourPage() {
     });
   }, [lots, filter, search]);
 
-  useEffect(() => {
-    if (!selected) return;
 
-    const padding = 250;
-    const x = Math.max(0, selected.x - padding);
-    const y = Math.max(0, selected.y - padding);
-    const w = padding * 2;
-    const h = padding * 2;
-    setViewBox(`${x} ${y} ${w} ${h}`);
-  }, [selected]);
 
   const onSelectSector = (id) => {
     navigate(`/tour?project=${encodeURIComponent(projectId)}&sector=${encodeURIComponent(id)}`);
