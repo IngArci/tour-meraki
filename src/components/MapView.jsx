@@ -88,7 +88,7 @@ export default function MapView({
                 r={r}
                 fill={statusColor(lot.status)}
                 stroke="white"
-                strokeWidth={2}
+                strokeWidth={1.8}
               />
               <text
                 x={lot.x}

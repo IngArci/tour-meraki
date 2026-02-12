@@ -76,15 +76,12 @@ svgFiles.forEach((svgFile) => {
 
 
 
-    const unique = new Map();
-    coords.forEach((c) => unique.set(c.code, c));
-
-
     fs.writeFileSync(
       outputPath,
-      JSON.stringify([...unique.values()], null, 2),
+      JSON.stringify(coords, null, 2),
       "utf8"
     );
+
 
     console.log(`✅ ${unique.size} lotes → ${outputFile}`);
   } catch (error) {

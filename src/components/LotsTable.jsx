@@ -92,7 +92,7 @@ export default function LotsTable({
         >
           <option value="TODOS">Todos</option>
           <option value="DISPONIBLE">Disponible</option>
-          <option value="SEPARADO">Separado</option>
+          <option value="NEGOC">Separado</option>
           <option value="VENDIDO">Vendido</option>
         </select>
       </div>
