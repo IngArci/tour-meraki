@@ -2,8 +2,8 @@ import fs from "fs";
 import path from "path";
 
 // Configuración
-const planosDir = "./public/planos";      
-const outputDir = "./public/coords";      
+const planosDir = "./public/planos";
+const outputDir = "./public/coords";
 
 
 if (!fs.existsSync(planosDir)) {
@@ -48,6 +48,8 @@ svgFiles.forEach((svgFile) => {
 
   try {
     const svg = fs.readFileSync(inputPath, "utf8");
+    regex.lastIndex = 0;
+
 
     const coords = [];
     let match;
@@ -55,6 +57,12 @@ svgFiles.forEach((svgFile) => {
     while ((match = regex.exec(svg)) !== null) {
       const transform = match[1];
       const rawCode = match[2];
+
+      const s = String(rawCode).trim();
+
+      if (!/^\d{7}$/.test(s) && !/^\d{6}$/.test(s) && !/^\d{4}$/.test(s)) {
+        continue;
+      }
 
       const pos = parseTranslate(transform);
       if (!pos) continue;
@@ -66,11 +74,12 @@ svgFiles.forEach((svgFile) => {
       });
     }
 
-    
+
+
     const unique = new Map();
     coords.forEach((c) => unique.set(c.code, c));
 
-   
+
     fs.writeFileSync(
       outputPath,
       JSON.stringify([...unique.values()], null, 2),
@@ -79,8 +88,8 @@ svgFiles.forEach((svgFile) => {
 
     console.log(`✅ ${unique.size} lotes → ${outputFile}`);
   } catch (error) {
-    console.error(`❌ Error procesando ${svgFile}:`, error.message);
+    console.error(` Error procesando ${svgFile}:`, error.message);
   }
 });
 
-console.log(`\n🎉 Listo! Archivos en ${outputDir}`);
+console.log(`\n Listo! Archivos en ${outputDir}`);

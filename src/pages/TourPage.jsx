@@ -195,7 +195,7 @@ export default function TourPage() {
       <header
         style={{
           gridColumn: "1 / -1",
-          background: "linear-gradient(90deg, #0B4D8B, #22C55E)",
+          background: "linear-gradient(90deg, #000000, #000000)",
           color: "white",
           padding: "14px 16px",
           borderRadius: 14,
@@ -264,6 +264,7 @@ export default function TourPage() {
         onSelect={setSelected}
         viewBox={viewBox}
         planImage={project.planImage || "/plano-color.jpeg"}
+        planSize={project.planSize}
       />
 
       {selected && <LotModal lot={selected} onClose={() => setSelected(null)} />}
