@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "coords": "node scripts/extractCoords.js",
+    "coordsSector": "node scripts/extractSectorCoords.js",
     "dev": "npm run coords && vite",
     "build": "npm run coords && vite build",
     "preview": "npm run coords && vite preview"

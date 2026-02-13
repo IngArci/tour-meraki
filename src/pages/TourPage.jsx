@@ -27,6 +27,12 @@ export default function TourPage() {
   const [isMobile, setIsMobile] = useState(false);
   const svgRef = useRef(null);
 
+  const [coordsUrl, setCoordsUrl] = useState(null);
+
+  const [mapImage, setMapImage] = useState(null);
+  const [mapSize, setMapSize] = useState(null);
+
+
   useEffect(() => {
     const fn = () => setIsMobile(window.innerWidth < 768);
     fn();
@@ -61,13 +67,6 @@ export default function TourPage() {
 
     let alive = true;
 
-    fetch(project.coordsFile, { cache: "no-store" })
-      .then((r) => r.json())
-      .then((data) => {
-        if (alive) setCoords(Array.isArray(data) ? data : []);
-      })
-      .catch(console.error);
-
     const loadSheet = async () => {
       try {
         const res = await fetch(project.sheetUrl, { cache: "no-store" });
@@ -88,40 +87,108 @@ export default function TourPage() {
   }, [project]);
 
   useEffect(() => {
-    if (!project?.sectors?.length) return;
+    if (!project) return;
 
     if (!sectorId) {
+      setMapImage(project.planImage || "/plano-color.jpeg");
+      setMapSize(project.planSize || null);
       setViewBox(null);
+      setCoordsUrl(project.coordsFile);
+      setSelected(null);
       return;
     }
 
-    const sector = project.sectors.find((s) => s.id === sectorId);
-    if (!sector?.coords) return;
+    const s = (project.sectors || []).find((x) => x.id === sectorId);
+    if (!s) return;
 
-    const { x, y, w, h } = sector.coords;
-    setViewBox(`${x} ${y} ${w} ${h}`);
+    setMapImage(s.planImage || project.planImage || "/plano-color.jpeg");
+    setMapSize(s.planSize || project.planSize || null);
+
+    const w = s.planSize?.w ?? project.planSize?.w;
+    const h = s.planSize?.h ?? project.planSize?.h;
+
+    if (w && h) setViewBox(`0 0 ${w} ${h}`);
+    else setViewBox(null);
+
+    setCoordsUrl(s.coordsFile || project.coordsFile);
     setSelected(null);
   }, [project, sectorId]);
 
-  const lots = useMemo(() => joinLots(coords, sheetRows), [coords, sheetRows]);
+
+  useEffect(() => {
+    if (!coordsUrl) return;
+
+    let alive = true;
+
+    fetch(coordsUrl, { cache: "no-store" })
+      .then((r) => r.json())
+      .then((data) => {
+        if (alive) setCoords(Array.isArray(data) ? data : []);
+      })
+      .catch(console.error);
+
+    return () => {
+      alive = false;
+    };
+  }, [coordsUrl]);
+
+
+  const lots = useMemo(() => {
+    const joined = joinLots(coords, sheetRows);
+
+    const unique = new Map();
+    for (const l of joined) {
+
+      const prev = unique.get(l.code);
+      if (!prev) unique.set(l.code, l);
+      else {
+
+        const score = (x) =>
+          (x.status ? 10 : 0) + (x.sector ? 3 : 0) + (x.areaM2 != null ? 2 : 0);
+        unique.set(l.code, score(l) >= score(prev) ? l : prev);
+      }
+    }
+    return [...unique.values()];
+  }, [coords, sheetRows]);
+
 
   const filteredLots = useMemo(() => {
     const upFilter = filter.toUpperCase();
+
     return lots.filter((l) => {
+      if (!l.inSheet) return false;
+
+      const matchesSector = sectorId ? l.sectorKey === sectorId : true;
+
       const status = (l.status || "").toUpperCase();
       const matchesFilter = upFilter === "TODOS" ? true : status === upFilter;
 
       const q = search.trim();
       const matchesSearch = q
         ? String(l.code).includes(q) ||
-          String(l.sector || "").toUpperCase().includes(q.toUpperCase())
+        String(l.sector || "").toUpperCase().includes(q.toUpperCase())
         : true;
 
-      return matchesFilter && matchesSearch;
+      return matchesSector && matchesFilter && matchesSearch;
     });
-  }, [lots, filter, search]);
+  }, [lots, filter, search, sectorId]);
 
 
+  const visibleLots = useMemo(() => {
+    if (!sectorId) return filteredLots;
+
+    const byId = filteredLots.filter(
+      (l) => String(l.sectorId || "").toLowerCase() === String(sectorId).toLowerCase()
+    );
+    if (byId.length > 0) return byId;
+
+    const sectorName = (project?.sectors || []).find((s) => s.id === sectorId)?.name;
+    if (!sectorName) return filteredLots;
+
+    return filteredLots.filter(
+      (l) => String(l.sector || "").toLowerCase().trim() === String(sectorName).toLowerCase().trim()
+    );
+  }, [filteredLots, sectorId, project]);
 
   const onSelectSector = (id) => {
     navigate(`/tour?project=${encodeURIComponent(projectId)}&sector=${encodeURIComponent(id)}`);
@@ -254,8 +321,8 @@ export default function TourPage() {
         selected={selected}
         onSelect={setSelected}
         viewBox={viewBox}
-        planImage={project.planImage || "/plano-color.jpeg"}
-        planSize={project.planSize}
+        planImage={mapImage || project.planImage || "/plano-color.jpeg"}
+        planSize={mapSize || project.planSize}
       />
 
       {selected && <LotModal lot={selected} onClose={() => setSelected(null)} />}

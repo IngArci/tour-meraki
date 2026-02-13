@@ -2,7 +2,7 @@ import React from "react";
 
 function statusColor(status) {
   const s = String(status || "").toUpperCase().trim();
-  if (s === "DISPONIBLE") return "#22C55E";
+  if (s === "DISPONIBLE") return "#ffffff00";
   if (s === "GERENCIA") return "#446fe4";
   if (s === "SEPARADO") return "#F59E0B";
   return "#6B7280";
@@ -57,7 +57,6 @@ export default function MapView({
                   y={lot.y - iconSize / 2}
                   width={iconSize}
                   height={iconSize}
-                  style={{ pointerEvents: "none" }}  
                 />
               </g>
             );
@@ -72,11 +71,11 @@ export default function MapView({
                   y={lot.y - iconSize / 2}
                   width={iconSize}
                   height={iconSize}
-                  style={{ pointerEvents: "none" }}
                 />
               </g>
             );
           }
+
 
           const r = isSelected ? 28 : 10;
 
@@ -88,20 +87,8 @@ export default function MapView({
                 r={r}
                 fill={statusColor(lot.status)}
                 stroke="white"
-                strokeWidth={1.8}
+                strokeWidth={0}
               />
-              <text
-                x={lot.x}
-                y={lot.y}
-                textAnchor="middle"
-                dominantBaseline="middle"
-                fontSize={isSelected ? "18" : "14"}
-                fontWeight="800"
-                fill="white"
-                style={{ pointerEvents: "none" }}
-              >
-                {lot.lote ?? "?"}
-              </text>
             </g>
           );
         })}

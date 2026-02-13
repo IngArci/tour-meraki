@@ -23,12 +23,11 @@
       "sheetUrl": "https://script.google.com/macros/s/AKfycby_A-J3UmhniywRJysaoGV1Xb5DGOORQQaxnjrJJiVT5eJz82_F6ANqi0Tn_nxLEE5b/exec?proyecto=CAÑON",
       "coordsFile": "/coords/plano2.json",
       "sectors": [
-        { "id": "texas", "name": "Texas", "color": "#3B82F6", "coords": { "x": 1700, "y": 800, "w": 700, "h": 490 } },
-        { "id": "colorado", "name": "Colorado", "color": "#001855", "coords": { "x":1500, "y": 900, "w": 300, "h": 300 } },
-        { "id": "las-vegas", "name": "Las Vegas", "color": "#F59E0B", "coords": { "x":1200, "y": 900, "w": 300, "h": 300 } },
-        { "id": "los-angeles", "name": "Los Ángeles", "color": "#8B0000", "coords": { "x": 800, "y": 650, "w": 600, "h": 630 } },
-        { "id": "san-francisco", "name": "San Francisco", "color": "#FFFF00", "coords": { "x": 300, "y": 690, "w": 500, "h": 630 } },
-        { "id": "arizona", "name": "Arizona", "color": "#A020F0", "coords": { "x":1050, "y": 1100, "w": 300, "h": 300 } }
+        { "id": "texas", "name": "Texas", "color": "#3B82F6", "planImage": "/sectors/texas.png", "planSize": { "w":427.88, "h":255.39 }, "coordsFile":  "/coords/texas.json" },
+        { "id": "colorado", "name": "Colorado", "color": "#001855", "planImage": "/sectors/colorado.jpeg", "planSize": { "w":374.2, "h":272.5 }, "coordsFile":  "/coords/colorado.json" },
+        { "id": "las-vegas", "name": "Las Vegas", "color": "#F59E0B", "planImage": "/sectors/las-vegas.png", "planSize": { "w":462.7, "h":302.23 }, "coordsFile":  "/coords/las-vegas.json" },
+        { "id": "los-angeles", "name": "Los Ángeles", "color": "#8B0000", "planImage": "/sectors/los-angeles.png", "planSize": { "w":449.41, "h":610.65 }, "coordsFile":  "/coords/los-angeles.json"},
+        { "id": "san-francisco", "name": "San Francisco", "color": "#FFFF00", "planImage": "/sectors/san-francisco.png", "planSize": { "w":651.67, "h":389.38 }, "coordsFile":  "/coords/san-francisco.json"}
 
       ]
     }

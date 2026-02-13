@@ -1,9 +1,18 @@
 import { normalizeArea, normalizeCode, normalizeStatus } from "./normalize";
 
+const slug = (s) =>
+  String(s ?? "")
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") 
+    .replace(/\s+/g, "-");
+
 export function joinLots(coords, sheetRows) {
   const byCode = new Map(
     sheetRows.map((r) => {
       const code = normalizeCode(r.codigo);
+
       return [
         code,
         {
@@ -11,6 +20,8 @@ export function joinLots(coords, sheetRows) {
           code,
           status: normalizeStatus(r.estado),
           areaM2: normalizeArea(r.area),
+          sectorKey: slug(r.sector), 
+          inSheet: true,             
         },
       ];
     })
@@ -18,10 +29,12 @@ export function joinLots(coords, sheetRows) {
 
   return coords.map((c) => {
     const code = normalizeCode(c.code);
+    const sheet = byCode.get(code);
+
     return {
       ...c,
       code,
-      ...(byCode.get(code) ?? { status: "SIN_DATO" }),
+      ...(sheet ?? { status: "SIN_DATO", sectorKey: "", inSheet: false }),
     };
   });
 }

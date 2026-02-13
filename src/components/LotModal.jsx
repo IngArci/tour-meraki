@@ -1,15 +1,12 @@
 import React from "react";
 
 export default function LotModal({ lot, onClose }) {
-
   const status = String(lot.status || "").toUpperCase().trim();
-  const isSold = status === "VENDIDO";
-  const isNegotiation = status === "NEGOCIACION" || status === "NEGOCIACIÓN";
-  const blockContact = isSold || isNegotiation;
 
+
+  const blockContact = status !== "DISPONIBLE";
 
   return (
-
     <div
       onClick={onClose}
       style={{
@@ -44,11 +41,12 @@ export default function LotModal({ lot, onClose }) {
           <div><b>Área:</b> {lot.areaM2 ?? "—"} m²</div>
           <div><b>Estado:</b> {lot.status ?? "—"}</div>
         </div>
+
         {!blockContact && (
           <button
             onClick={() => {
               const phone = "573001112233";
-              const text = `Hola, me interesa el lote ${lot.lote ?? "N/A"} del proyecto ${lot.proyecto ?? ""}. ¿Me das más información?`;
+              const text = `Hola, me interesa el terreno ${lot.lote ?? "N/A"} del proyecto ${lot.proyecto ?? ""}. ¿Me das más información?`;
               window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, "_blank");
             }}
             style={{
@@ -66,7 +64,6 @@ export default function LotModal({ lot, onClose }) {
             Contactar a un asesor
           </button>
         )}
-
       </div>
     </div>
   );
