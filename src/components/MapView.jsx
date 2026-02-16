@@ -1,7 +1,9 @@
 import React from "react";
 
 function statusColor(status) {
-  const s = String(status || "").toUpperCase().trim();
+  const s = String(status || "")
+    .toUpperCase()
+    .trim();
   if (s === "DISPONIBLE") return "#ffffff00";
   if (s === "GERENCIA") return "#446fe4";
   if (s === "SEPARADO") return "#F59E0B";
@@ -15,7 +17,7 @@ export default function MapView({
   viewBox,
   planImage,
   planSize,
-  svgRef
+  svgRef,
 }) {
   const w = planSize?.w ?? 2478.26;
   const h = planSize?.h ?? 1197.39;
@@ -28,7 +30,7 @@ export default function MapView({
         borderRadius: 14,
         overflow: "hidden",
         boxShadow: "0 10px 30px rgba(0,0,0,.12)",
-        height: "calc(100vh - 32px)"
+        height: "calc(100vh - 32px)",
       }}
     >
       <svg
@@ -41,16 +43,23 @@ export default function MapView({
 
         {lots.map((lot) => {
           const isSelected = selected?.code === lot.code;
-          const status = String(lot.status || "").toUpperCase().trim();
+          const status = String(lot.status || "")
+            .toUpperCase()
+            .trim();
 
           const isSold = status === "VENDIDO";
-          const isNegotiation = status === "NEGOCIACION" || status === "NEGOCIACIÓN";
+          const isNegotiation =
+            status === "NEGOCIACION" || status === "NEGOCIACIÓN";
 
           const iconSize = isSelected ? 60 : 26;
 
           if (isSold) {
             return (
-              <g key={lot.code} onClick={() => onSelect(lot)} style={{ cursor: "pointer" }}>
+              <g
+                key={lot.code}
+                onClick={() => onSelect(lot)}
+                style={{ cursor: "pointer" }}
+              >
                 <image
                   href="/sold-happy.png"
                   x={lot.x - iconSize / 2}
@@ -64,7 +73,11 @@ export default function MapView({
 
           if (isNegotiation) {
             return (
-              <g key={lot.code} onClick={() => onSelect(lot)} style={{ cursor: "pointer" }}>
+              <g
+                key={lot.code}
+                onClick={() => onSelect(lot)}
+                style={{ cursor: "pointer" }}
+              >
                 <image
                   href="/negotiation.png"
                   x={lot.x - iconSize / 2}
@@ -76,11 +89,14 @@ export default function MapView({
             );
           }
 
-
           const r = isSelected ? 28 : 10;
 
           return (
-            <g key={lot.code} onClick={() => onSelect(lot)} style={{ cursor: "pointer" }}>
+            <g
+              key={lot.code}
+              onClick={() => onSelect(lot)}
+              style={{ cursor: "pointer" }}
+            >
               <circle
                 cx={lot.x}
                 cy={lot.y}

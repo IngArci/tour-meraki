@@ -21,6 +21,7 @@ export function joinLots(coords, sheetRows) {
           status: normalizeStatus(r.estado),
           areaM2: normalizeArea(r.area),
           sectorKey: slug(r.sector), 
+          loteKey: r.lote,
           inSheet: true,             
         },
       ];
