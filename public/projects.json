@@ -30,6 +30,19 @@
         { "id": "san-francisco", "name": "San Francisco", "color": "#FFFF00", "planImage": "/sectors/san-francisco.png", "planSize": { "w":651.67, "h":389.38 }, "coordsFile":  "/coords/san-francisco.json"}
 
       ]
+    },{
+      "id": "laguna-mar",
+      "planImage": "/cañon.png",
+      "planSize": { "w": 2551.18, "h": 1699.55 }, 
+      "name": "Laguna Mar",
+      "location": "Melgar, Tolima",
+      "image": "/rio.webp", 
+      "sheetUrl": "https://script.google.com/macros/s/AKfycby_A-J3UmhniywRJysaoGV1Xb5DGOORQQaxnjrJJiVT5eJz82_F6ANqi0Tn_nxLEE5b/exec?proyecto=LAGUNA MAR",
+      "coordsFile": "/coords/plano2.json",
+      "sectors": [
+        { "id": "texas", "name": "Texas", "color": "#3B82F6", "planImage": "/sectors/texas.png", "planSize": { "w":427.88, "h":255.39 }, "coordsFile":  "/coords/texas.json" },
+        { "id": "colorado", "name": "Colorado", "color": "#001855", "planImage": "/sectors/colorado.jpeg", "planSize": { "w":374.2, "h":272.5 }, "coordsFile":  "/coords/colorado.json" }
+      ]
     }
   ]
 }

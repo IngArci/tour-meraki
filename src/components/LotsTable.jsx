@@ -1,5 +1,13 @@
 import React from "react";
 
+const COLORS = {
+  gold: "#CFAB42",
+  white: "#FFFFFF",
+  black: "#000000",
+  gray: "#BFBFBF",
+  border: "rgba(207,171,66,0.35)",
+};
+
 export default function LotsTable({
   lots,
   filter,
@@ -7,24 +15,40 @@ export default function LotsTable({
   search,
   setSearch,
   onSelect,
-
   sectors = [],
   currentSectorId = null,
   onSelectSector,
   onViewAll,
-
   selectedCode = null,
 }) {
   const isMobile = window.innerWidth < 768;
 
-  const getStatusColor = (status) => {
-    const s = String(status || "")
-      .trim()
-      .toUpperCase();
-    if (s === "DISPONIBLE") return "#10B981";
-    if (s === "NEGOCIACION") return "#F59E0B";
-    if (s === "VENDIDO") return "#EF4444";
-    return "#2855ad";
+  const getStatusStyle = (status) => {
+    const s = String(status || "").trim().toUpperCase();
+
+    if (s === "DISPONIBLE")
+      return {
+        border: "1px solid #CFAB42",
+        color: "#CFAB42",
+      };
+
+    if (s === "NEGOCIACION")
+      return {
+        border: "1px solid #CFAB42",
+        color: "#CFAB42",
+        opacity: 0.7,
+      };
+
+    if (s === "VENDIDO")
+      return {
+        border: "1px solid #666",
+        color: "#666",
+      };
+
+    return {
+      border: `1px solid ${COLORS.border}`,
+      color: COLORS.gray,
+    };
   };
 
   const visibleLots = lots
@@ -35,6 +59,7 @@ export default function LotsTable({
         l.code?.includes(search) ||
         l.sectorKey?.includes(search.toLowerCase()) ||
         l.lote?.toString().includes(search);
+
       return matchesSearch && (filter === "TODOS" || l.status === filter);
     })
     .sort((a, b) => a.loteNum - b.loteNum)
@@ -43,130 +68,126 @@ export default function LotsTable({
   return (
     <aside
       style={{
-        background: "white",
-        borderRadius: 14,
-        padding: 14,
-        boxShadow: "0 10px 30px rgba(0,0,0,.12)",
+        background: COLORS.black,
+        padding: 18,
         height: isMobile ? "80vh" : undefined,
-        maxHeight: isMobile ? "80vh" : "calc(100vh - 32px - 70px)",
-        minHeight: isMobile ? "500px" : "auto",
+        maxHeight: isMobile ? "80vh" : "calc(100vh - 120px)",
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
       }}
     >
+
+      {/* TITLE */}
       <div
         style={{
-          fontWeight: 900,
-          fontSize: 16,
-          marginBottom: 8,
-          paddingBottom: 8,
+          color: COLORS.gold,
+          fontSize: 13,
+          letterSpacing: 3,
+          marginBottom: 12,
         }}
       >
-        📋 Listado de Terrenos ({visibleLots.length})
+        LOTES DISPONIBLES ({visibleLots.length})
       </div>
 
+
+      {/* SECTORS */}
       {sectors.length > 0 && (
         <div
           style={{
-            marginBottom: 6,
-            maxHeight: isMobile ? 60 : "auto",
-            overflow: "auto",
+            marginBottom: 12,
             display: "flex",
             flexWrap: "wrap",
-            gap: 6,
-            paddingBottom: 4,
+            gap: 8,
           }}
         >
           {sectors.map((s) => {
             const active = s.id === currentSectorId;
+
             return (
               <button
                 key={s.id}
                 onClick={() => onSelectSector?.(s.id)}
                 style={{
-                  padding: "8px 12px",
-                  borderRadius: 10,
-                  border: active
-                    ? `2px solid ${s.color || "#2563EB"}`
-                    : "1px solid #E5E7EB",
-                  background: active ? s.color || "#2563EB" : "white",
-                  color: active ? "white" : "#111827",
+                  padding: "6px 14px",
+                  background: active ? COLORS.gold : "transparent",
+                  color: active ? COLORS.black : COLORS.white,
+                  border: `1px solid ${COLORS.border}`,
                   cursor: "pointer",
-                  fontWeight: 600,
-                  fontSize: 13,
-                  whiteSpace: "nowrap",
-                  flexShrink: 0,
+                  fontSize: 12,
+                  letterSpacing: 1,
                 }}
               >
                 {s.name}
               </button>
             );
           })}
+
           <button
             onClick={() => onViewAll?.()}
             style={{
-              padding: "8px 12px",
-              borderRadius: 10,
-              border: "1px solid #E5E7EB",
-              background: "#F9FAFB",
-              color: "#6B7280",
+              padding: "6px 14px",
+              background: "transparent",
+              color: COLORS.gray,
+              border: `1px solid ${COLORS.border}`,
               cursor: "pointer",
-              fontWeight: 600,
-              fontSize: 13,
-              whiteSpace: "nowrap",
-              flexShrink: 0,
+              fontSize: 12,
+              letterSpacing: 1,
             }}
           >
-            Todos
+            TODOS
           </button>
         </div>
       )}
 
+
+      {/* SEARCH */}
       <div
         style={{
           display: "flex",
           gap: 8,
-          marginBottom: 8,
+          marginBottom: 12,
           flexDirection: isMobile ? "column" : "row",
         }}
       >
         <input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          placeholder="Buscar..."
+          placeholder="Buscar lote..."
           style={{
             flex: 1,
             padding: "10px 12px",
-            borderRadius: 10,
-            border: "1px solid #E5E7EB",
-            fontSize: 14,
+            background: COLORS.black,
+            color: COLORS.white,
+            border: `1px solid ${COLORS.border}`,
+            outline: "none",
           }}
         />
+
         <select
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
           style={{
             padding: "10px 12px",
-            borderRadius: 10,
-            border: "1px solid #E5E7EB",
-            fontSize: 14,
-            minWidth: isMobile ? "100%" : 120,
-            background: "white",
+            background: COLORS.black,
+            color: COLORS.white,
+            border: `1px solid ${COLORS.border}`,
+            cursor: "pointer",
           }}
         >
-          <option value="TODOS">Todos</option>
-          <option value="DISPONIBLE">Disponible</option>
-          <option value="NEGOCIACION">Separado</option>
-          <option value="VENDIDO">Vendido</option>
+          <option value="TODOS">TODOS</option>
+          <option value="DISPONIBLE">DISPONIBLE</option>
+          <option value="NEGOCIACION">NEGOCIACIÓN</option>
+          <option value="VENDIDO">VENDIDO</option>
         </select>
       </div>
 
+
+      {/* TABLE */}
       <div
         style={{
           flex: 1,
           overflow: "auto",
-          minHeight: 0,
         }}
       >
         <table
@@ -174,112 +195,96 @@ export default function LotsTable({
             width: "100%",
             borderCollapse: "collapse",
             fontSize: 13,
-            tableLayout: "fixed",
           }}
         >
+            {/* HEADER */}
           <thead>
             <tr
               style={{
-                background: "#F9FAFB",
-                fontWeight: 700,
-                fontSize: 12,
-                color: "#6B7280",
+                borderBottom: `1px solid ${COLORS.border}`,
+                color: COLORS.gray,
+                fontSize: 11,
+                letterSpacing: 1,
               }}
             >
-              <th
-                style={{
-                  padding: "10px 8px",
-                  textAlign: "left",
-                  borderBottom: "1px solid #E5E7EB",
-                }}
-              >
-                Sector
+              <th style={{ padding: "10px 6px", textAlign: "left" }}>
+                SECTOR
               </th>
-              <th
-                style={{
-                  padding: "10px 8px",
-                  textAlign: "left",
-                  borderBottom: "1px solid #E5E7EB",
-                }}
-              >
-                Terrenos
+
+              <th style={{ padding: "10px 6px", textAlign: "left" }}>
+                LOTE
               </th>
-              <th
-                style={{
-                  padding: "10px 8px",
-                  textAlign: "right",
-                  borderBottom: "1px solid #E5E7EB",
-                }}
-              >
-                Área
+
+              <th style={{ padding: "10px 6px", textAlign: "right" }}>
+                ÁREA
               </th>
-              <th
-                style={{
-                  padding: "10px 8px",
-                  textAlign: "center",
-                  borderBottom: "1px solid #E5E7EB",
-                }}
-              >
-                Estado
+
+              <th style={{ padding: "10px 6px", textAlign: "center" }}>
+                ESTADO
               </th>
             </tr>
           </thead>
+
+
+          {/* BODY */}
           <tbody>
             {visibleLots.map((l) => {
+
               const active = selectedCode === l.code;
+
               return (
                 <tr
                   key={l.code}
                   onClick={() => onSelect(l)}
                   style={{
                     cursor: "pointer",
-                    background: active ? "#EFF6FF" : "transparent",
-                    transition: "background 0.2s ease",
+                    borderBottom: `1px solid ${COLORS.border}`,
+                    background: active ? "rgba(207,171,66,0.08)" : "transparent",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background =
+                      "rgba(207,171,66,0.12)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background =
+                      active ? "rgba(207,171,66,0.08)" : "transparent";
                   }}
                 >
-                  <td
-                    style={{
-                      padding: "12px 8px",
-                      borderBottom: "1px solid #F3F4F6",
-                      fontWeight: 600,
-                    }}
-                  >
+                  <td style={{ padding: "12px 6px", color: COLORS.gray }}>
                     {l.sectorKey || "—"}
                   </td>
+
                   <td
                     style={{
-                      padding: "12px 8px",
-                      borderBottom: "1px solid #F3F4F6",
-                      fontWeight: 800,
-                      color: "#1E40AF",
+                      padding: "12px 6px",
+                      color: COLORS.gold,
+                      letterSpacing: 1,
                     }}
                   >
                     {l.lote || "—"}
                   </td>
+
                   <td
                     style={{
-                      padding: "12px 8px",
-                      borderBottom: "1px solid #F3F4F6",
+                      padding: "12px 6px",
                       textAlign: "right",
                     }}
                   >
                     {l.areaM2 ? l.areaM2.toLocaleString() : "—"}
                   </td>
+
                   <td
                     style={{
-                      padding: "12px 8px",
-                      borderBottom: "1px solid #F3F4F6",
+                      padding: "12px 6px",
                       textAlign: "center",
                     }}
                   >
                     <span
                       style={{
-                        padding: "4px 8px",
-                        borderRadius: 6,
-                        backgroundColor: getStatusColor(l.status),
-                        color: "white",
+                        padding: "4px 10px",
                         fontSize: 11,
-                        fontWeight: 700,
+                        letterSpacing: 1,
+                        ...getStatusStyle(l.status),
                       }}
                     >
                       {String(l.status || "").trim()}
@@ -288,6 +293,7 @@ export default function LotsTable({
                 </tr>
               );
             })}
+
             {visibleLots.length === 0 && (
               <tr>
                 <td
@@ -295,16 +301,18 @@ export default function LotsTable({
                   style={{
                     padding: 24,
                     textAlign: "center",
-                    color: "#9CA3AF",
+                    color: COLORS.gray,
                   }}
                 >
-                  No hay lotes
+                  SIN RESULTADOS
                 </td>
               </tr>
             )}
           </tbody>
+
         </table>
       </div>
+
     </aside>
   );
 }

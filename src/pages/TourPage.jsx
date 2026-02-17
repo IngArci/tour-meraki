@@ -32,6 +32,15 @@ export default function TourPage() {
   const [mapImage, setMapImage] = useState(null);
   const [mapSize, setMapSize] = useState(null);
 
+  const COLORS = {
+    gold: "#CFAB42",
+    white: "#FFFFFF",
+    black: "#000000",
+    gray: "#BFBFBF",
+    border: "rgba(207,171,66,0.35)",
+  };
+
+
   const PIN_CONFIGS = {
     texas: {
       iconSize: 24,
@@ -290,91 +299,163 @@ export default function TourPage() {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: isMobile ? "1fr" : "380px 1fr",
-        gridTemplateRows: isMobile ? "auto 1fr" : "1fr",
-        gap: isMobile ? 12 : 16,
-        padding: isMobile ? 8 : 16,
+        gridTemplateColumns: isMobile ? "1fr" : "400px 1fr",
+        gridTemplateRows: "auto 1fr",
+        gap: 16,
+        padding: isMobile ? 10 : 20,
         height: "100vh",
-        boxSizing: "border-box"
+        background: COLORS.black,
+        color: COLORS.white,
+        boxSizing: "border-box",
       }}
     >
+
+      {/* HEADER MERAKI */}
       <header
         style={{
           gridColumn: "1 / -1",
-          background: "linear-gradient(90deg, #000000, #000000)",
-          color: "white",
-          padding: "14px 16px",
-          borderRadius: 14,
+          background: COLORS.black,
+          border: `1px solid ${COLORS.border}`,
+          padding: "18px 22px",
           display: "flex",
-          alignItems: "center",
           justifyContent: "space-between",
-          gap: 12
+          alignItems: "center",
         }}
       >
         <div>
-          <div style={{ fontWeight: 900, fontSize: 18 }}>{project.name}</div>
-          <div style={{ opacity: 0.9, fontSize: 13 }}>{project.location ?? ""}</div>
+          <div
+            style={{
+              color: COLORS.gold,
+              fontSize: 12,
+              letterSpacing: 3,
+              marginBottom: 4,
+            }}
+          >
+            GRUPO CONSTRUCTOR MERAKI
+          </div>
+
+          <div
+            style={{
+              fontSize: 20,
+              fontWeight: 300,
+              letterSpacing: 1,
+            }}
+          >
+            {project.name}
+          </div>
+
+          <div
+            style={{
+              fontSize: 13,
+              color: COLORS.gray,
+            }}
+          >
+            {project.location ?? ""}
+          </div>
         </div>
 
-        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+        <div style={{ display: "flex", gap: 12 }}>
+
+          {/* PDF BUTTON */}
           <button
             onClick={handleDownloadPdf}
             style={{
-              padding: "10px 12px",
-              borderRadius: 10,
-              border: "1px solid rgba(255,255,255,.35)",
-              background: "rgba(255,255,255,.15)",
-              color: "white",
+              padding: "10px 18px",
+              background: "transparent",
+              border: `1px solid ${COLORS.border}`,
+              color: COLORS.gold,
               cursor: "pointer",
-              fontWeight: 900
+              letterSpacing: 1,
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.border = "1px solid #CFAB42";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.border = COLORS.border;
             }}
           >
-            Descargar PDF
+            DESCARGAR PDF
           </button>
 
+          {/* BACK BUTTON */}
           <button
             onClick={() => navigate("/")}
             style={{
-              padding: "10px 12px",
-              borderRadius: 10,
-              border: "1px solid rgba(255,255,255,.35)",
-              background: "rgba(255,255,255,.15)",
-              color: "white",
+              padding: "10px 18px",
+              background: "transparent",
+              border: `1px solid ${COLORS.border}`,
+              color: COLORS.white,
               cursor: "pointer",
-              fontWeight: 900
+              letterSpacing: 1,
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.border = "1px solid #CFAB42";
+              e.currentTarget.style.color = "#CFAB42";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.border = COLORS.border;
+              e.currentTarget.style.color = COLORS.white;
             }}
           >
-            ← Clubes
+            ← PROYECTOS
           </button>
+
         </div>
       </header>
 
-      <LotsTable
-        lots={filteredLots}
-        filter={filter}
-        setFilter={setFilter}
-        search={search}
-        setSearch={setSearch}
-        onSelect={setSelected}
-        sectors={project.sectors || []}
-        currentSectorId={sectorId}
-        onSelectSector={onSelectSector}
-        onViewAll={onViewAll}
-        selectedCode={selected?.code || null}
-      />
 
-      <MapView
-        svgRef={svgRef}
-        lots={filteredLots}
-        selected={selected}
-        onSelect={setSelected}
-        viewBox={viewBox}
-        planImage={mapImage || project.planImage || "/plano-color.jpeg"}
-        planSize={mapSize || project.planSize}
-        pinConfig={PIN_CONFIGS[sectorId]}
-      />
+      {/* LEFT PANEL */}
+      <div
+        style={{
+          border: `1px solid ${COLORS.border}`,
+          background: COLORS.black,
+        }}
+      >
+        <LotsTable
+          lots={filteredLots}
+          filter={filter}
+          setFilter={setFilter}
+          search={search}
+          setSearch={setSearch}
+          onSelect={setSelected}
+          sectors={project.sectors || []}
+          currentSectorId={sectorId}
+          onSelectSector={onSelectSector}
+          onViewAll={onViewAll}
+          selectedCode={selected?.code || null}
+        />
+      </div>
 
-      {selected && <LotModal lot={selected} onClose={() => setSelected(null)} />}
+
+      {/* MAP PANEL */}
+      <div
+        style={{
+          border: `1px solid ${COLORS.border}`,
+          background: COLORS.black,
+        }}
+      >
+        <MapView
+          svgRef={svgRef}
+          lots={filteredLots}
+          selected={selected}
+          onSelect={setSelected}
+          viewBox={viewBox}
+          planImage={mapImage || project.planImage}
+          planSize={mapSize || project.planSize}
+          pinConfig={PIN_CONFIGS[sectorId]}
+        />
+      </div>
+
+
+      {/* MODAL */}
+      {selected && (
+        <LotModal
+          lot={selected}
+          onClose={() => setSelected(null)}
+        />
+      )}
+
     </div>
   );
+
 }

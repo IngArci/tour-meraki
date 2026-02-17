@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const COLORS = {
+  gold: "#CFAB42",
+  white: "#FFFFFF",
+  black: "#000000",
+  gray: "#A0A0A0",
+  border: "rgba(207,171,66,0.35)",
+};
+
 export default function ProjectsPage() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,7 +25,7 @@ export default function ProjectsPage() {
         const list = Array.isArray(data) ? data : data?.projects || [];
         if (alive) setProjects(Array.isArray(list) ? list : []);
       } catch (e) {
-        console.error("Error loading /projects.json", e);
+        console.error(e);
         if (alive) setProjects([]);
       } finally {
         if (alive) setLoading(false);
@@ -25,128 +33,181 @@ export default function ProjectsPage() {
     };
 
     load();
-    return () => {
-      alive = false;
-    };
+    return () => (alive = false);
   }, []);
 
   return (
     <div
       style={{
-        padding: "24px 16px",
-        maxWidth: 1400,
-        margin: "0 auto",
-        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-        minHeight: "100vh"
+        background: COLORS.black,
+        minHeight: "100vh",
+        padding: "60px 32px",
       }}
     >
-      <header style={{ textAlign: "center", color: "white", marginBottom: 24 }}>
-        <h1 style={{ fontSize: "clamp(32px, 5vw, 48px)", margin: 0, fontWeight: 800 }}>
-          Clubes de Campo Premium
-        </h1>
-        <p style={{ fontSize: "clamp(16px, 3vw, 20px)", opacity: 0.9, maxWidth: 600, margin: "16px auto 0" }}>
-          Elige un club para ver sus sectores
-        </p>
-      </header>
+      <div style={{ maxWidth: 1300, margin: "0 auto" }}>
+        
+        {/* HEADER */}
+        <header style={{ marginBottom: 60 }}>
+          
+          <div
+            style={{
+              color: COLORS.gold,
+              fontSize: 14,
+              letterSpacing: 4,
+              marginBottom: 12,
+            }}
+          >
+            GRUPO CONSTRUCTOR MERAKI
+          </div>
 
-      {loading && (
-        <div style={{ color: "white", textAlign: "center", opacity: 0.95 }}>
-          Cargando clubes...
-        </div>
-      )}
+          <h1
+            style={{
+              color: COLORS.white,
+              fontSize: "clamp(34px, 5vw, 52px)",
+              fontWeight: 300,
+              letterSpacing: 2,
+              margin: 0,
+            }}
+          >
+            PROYECTOS
+          </h1>
 
-      {!loading && projects.length === 0 && (
+          <div
+            style={{
+              width: 120,
+              height: 1,
+              background: COLORS.gold,
+              marginTop: 20,
+            }}
+          />
+
+        </header>
+
+        {/* LOADING */}
+        {loading && (
+          <div style={{ color: COLORS.gray }}>
+            Cargando proyectos...
+          </div>
+        )}
+
+        {/* GRID */}
         <div
           style={{
-            background: "rgba(255,255,255,.12)",
-            border: "1px solid rgba(255,255,255,.25)",
-            borderRadius: 16,
-            padding: 16,
-            color: "white",
-            maxWidth: 760,
-            margin: "0 auto"
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(380px, 1fr))",
+            gap: 40,
           }}
         >
-          No hay proyectos. Revisa <b>public/projects.json</b>.
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              onClick={() =>
+                navigate(`/tour?project=${encodeURIComponent(project.id)}`)
+              }
+            />
+          ))}
         </div>
-      )}
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-          gap: 24,
-          marginTop: 24
-        }}
-      >
-        {projects.map((p) => (
-          <ProjectCard
-            key={p.id}
-            project={p}
-            onClick={() => navigate(`/tour?project=${encodeURIComponent(p.id)}`)}
-          />
-        ))}
       </div>
     </div>
   );
 }
 
 function ProjectCard({ project, onClick }) {
+
   const sectorsCount = project?.sectors?.length ?? 0;
 
   return (
     <div
       onClick={onClick}
       style={{
-        background: "white",
-        borderRadius: 20,
-        overflow: "hidden",
-        boxShadow: "0 25px 50px rgba(0,0,0,.15)",
         cursor: "pointer",
-        transition: "transform .2s ease",
-        position: "relative"
+        border: `1px solid ${COLORS.border}`,
+        transition: "all .25s ease",
+        background: COLORS.black,
       }}
-      onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-6px)")}
-      onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.border = "1px solid #CFAB42";
+        e.currentTarget.style.transform = "translateY(-4px)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.border = COLORS.border;
+        e.currentTarget.style.transform = "translateY(0)";
+      }}
     >
-      <div
-        style={{
-          position: "absolute",
-          top: 16,
-          right: 16,
-          background: "rgba(255,255,255,.92)",
-          padding: "8px 12px",
-          borderRadius: 20,
-          fontSize: 12,
-          fontWeight: 900
-        }}
-      >
-        {sectorsCount} sectores
+      
+      {/* IMAGE */}
+      <div style={{ position: "relative" }}>
+        
+        {project?.image ? (
+          <img
+            src={project.image}
+            alt={project.name}
+            style={{
+              width: "100%",
+              height: 260,
+              objectFit: "cover",
+              display: "block",
+              filter: "brightness(0.9)",
+            }}
+          />
+        ) : (
+          <div style={{ height: 260, background: "#111" }} />
+        )}
+
+        {/* SECTORS BADGE */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            background: COLORS.black,
+            color: COLORS.gold,
+            padding: "10px 18px",
+            fontSize: 12,
+            letterSpacing: 2,
+          }}
+        >
+          {sectorsCount} SECTORES
+        </div>
+
       </div>
 
-      {project?.image ? (
-        <img
-          src={project.image}
-          alt={project.name || "Proyecto"}
-          style={{ width: "100%", height: 220, objectFit: "cover", display: "block" }}
-          onError={(e) => {
-            e.currentTarget.style.display = "none";
+      {/* CONTENT */}
+      <div style={{ padding: "26px 24px" }}>
+        
+        <div
+          style={{
+            color: COLORS.white,
+            fontSize: 20,
+            fontWeight: 300,
+            letterSpacing: 1,
+            marginBottom: 8,
           }}
-        />
-      ) : (
-        <div style={{ height: 220, background: "linear-gradient(135deg,#0B4D8B,#22C55E)" }} />
-      )}
+        >
+          {project?.name}
+        </div>
 
-      <div style={{ padding: 20 }}>
-        <div style={{ fontSize: 20, fontWeight: 900, color: "#111827" }}>
-          {project?.name ?? "Proyecto"}
+        <div
+          style={{
+            color: COLORS.gray,
+            fontSize: 14,
+            marginBottom: 18,
+          }}
+        >
+          {project?.location}
         </div>
-        <div style={{ marginTop: 8, color: "#6B7280", fontSize: 14 }}>
-          📍 {project?.location ?? "—"}
+
+        <div
+          style={{
+            color: COLORS.gold,
+            fontSize: 13,
+            letterSpacing: 2,
+          }}
+        >
+          VER PROYECTO
         </div>
-        <div style={{ marginTop: 10, color: "#2563EB", fontWeight: 900, fontSize: 14 }}>
-          Ver sectores →
-        </div>
+
       </div>
     </div>
   );

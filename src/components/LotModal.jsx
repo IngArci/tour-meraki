@@ -1,70 +1,231 @@
 import React from "react";
 
+const COLORS = {
+  gold: "#CFAB42",
+  white: "#FFFFFF",
+  black: "#000000",
+  gray: "#BFBFBF",
+  border: "rgba(207,171,66,0.35)",
+};
+
 export default function LotModal({ lot, onClose }) {
+
   const status = String(lot.status || "").toUpperCase().trim();
-
-
   const blockContact = status !== "DISPONIBLE";
 
+
+  const getStatusStyle = () => {
+
+    if (status === "DISPONIBLE")
+      return {
+        color: COLORS.gold,
+        border: `1px solid ${COLORS.gold}`,
+      };
+
+    if (status === "NEGOCIACION")
+      return {
+        color: COLORS.gold,
+        border: `1px solid ${COLORS.gold}`,
+        opacity: 0.7,
+      };
+
+    if (status === "VENDIDO")
+      return {
+        color: "#666",
+        border: "1px solid #666",
+      };
+
+    return {
+      color: COLORS.gray,
+      border: `1px solid ${COLORS.border}`,
+    };
+  };
+
+
   return (
+
     <div
       onClick={onClose}
       style={{
         position: "fixed",
         inset: 0,
-        background: "rgba(0,0,0,.35)",
+        background: "rgba(0,0,0,0.75)",
         display: "grid",
         placeItems: "center",
-        zIndex: 50
+        zIndex: 999,
       }}
     >
+
       <div
         onClick={(e) => e.stopPropagation()}
         style={{
-          width: "min(520px, 92vw)",
-          background: "white",
-          borderRadius: 12,
-          padding: 16,
-          boxShadow: "0 20px 60px rgba(0,0,0,.25)"
+          width: "min(500px, 92vw)",
+          background: COLORS.black,
+          padding: 28,
+          border: `1px solid ${COLORS.border}`,
         }}
       >
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <strong>Lote {lot.lote}</strong>
-          <button onClick={onClose} style={{ border: 0, background: "transparent", cursor: "pointer" }}>
+
+        {/* HEADER */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: 20,
+          }}
+        >
+
+          <div>
+
+            <div
+              style={{
+                color: COLORS.gray,
+                fontSize: 11,
+                letterSpacing: 3,
+                marginBottom: 6,
+              }}
+            >
+              INFORMACIÓN DEL LOTE
+            </div>
+
+            <div
+              style={{
+                color: COLORS.gold,
+                fontSize: 26,
+                letterSpacing: 2,
+              }}
+            >
+              LOTE {lot.lote}
+            </div>
+
+          </div>
+
+
+          <button
+            onClick={onClose}
+            style={{
+              background: "transparent",
+              border: `1px solid ${COLORS.border}`,
+              color: COLORS.gray,
+              padding: "6px 12px",
+              cursor: "pointer",
+              fontSize: 14,
+            }}
+          >
             ✕
           </button>
+
         </div>
 
-        <div style={{ marginTop: 10, display: "grid", gap: 6 }}>
-          <div><b>Proyecto:</b> {lot.proyecto ?? "—"}</div>
-          <div><b>Sector:</b> {lot.sector ?? "—"}</div>
-          <div><b>Área:</b> {lot.areaM2 ?? "—"} m²</div>
-          <div><b>Estado:</b> {lot.status ?? "—"}</div>
+
+        {/* CONTENT */}
+        <div
+          style={{
+            display: "grid",
+            gap: 14,
+            marginBottom: 22,
+            fontSize: 14,
+          }}
+        >
+
+          <div>
+            <div style={{ color: COLORS.gray, fontSize: 11, letterSpacing: 2 }}>
+              PROYECTO
+            </div>
+
+            <div style={{ color: COLORS.white }}>
+              {lot.proyecto ?? "—"}
+            </div>
+          </div>
+
+
+          <div>
+            <div style={{ color: COLORS.gray, fontSize: 11, letterSpacing: 2 }}>
+              SECTOR
+            </div>
+
+            <div style={{ color: COLORS.white }}>
+              {lot.sector ?? "—"}
+            </div>
+          </div>
+
+
+          <div>
+            <div style={{ color: COLORS.gray, fontSize: 11, letterSpacing: 2 }}>
+              ÁREA
+            </div>
+
+            <div style={{ color: COLORS.white }}>
+              {lot.areaM2 ?? "—"} m²
+            </div>
+          </div>
+
+
+          <div>
+            <div style={{ color: COLORS.gray, fontSize: 11, letterSpacing: 2 }}>
+              ESTADO
+            </div>
+
+            <div style={{ marginTop: 4 }}>
+              <span
+                style={{
+                  padding: "6px 14px",
+                  fontSize: 12,
+                  letterSpacing: 2,
+                  ...getStatusStyle(),
+                }}
+              >
+                {status}
+              </span>
+            </div>
+          </div>
+
         </div>
 
+
+        {/* CONTACT BUTTON */}
         {!blockContact && (
+
           <button
             onClick={() => {
+
               const phone = "573001112233";
-              const text = `Hola, me interesa el terreno ${lot.lote ?? "N/A"} del proyecto ${lot.proyecto ?? ""}. ¿Me das más información?`;
-              window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, "_blank");
+
+              const text =
+                `Hola, estoy interesado en el lote ${lot.lote} del proyecto ${lot.proyecto}. ¿Podrían darme más información?`;
+
+              window.open(
+                `https://wa.me/${phone}?text=${encodeURIComponent(text)}`,
+                "_blank"
+              );
+
             }}
             style={{
               width: "100%",
-              marginTop: 14,
-              padding: "12px 14px",
-              borderRadius: 10,
-              border: 0,
+              padding: "14px",
+              background: COLORS.gold,
+              color: COLORS.black,
+              border: "none",
               cursor: "pointer",
-              background: "#0B4D8B",
-              color: "white",
-              fontWeight: 800
+              fontWeight: 600,
+              letterSpacing: 2,
+              fontSize: 13,
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.opacity = "0.85";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.opacity = "1";
             }}
           >
-            Contactar a un asesor
+            CONTACTAR ASESOR
           </button>
+
         )}
+
       </div>
+
     </div>
   );
 }
