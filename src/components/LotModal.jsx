@@ -18,21 +18,20 @@ export default function LotModal({ lot, onClose }) {
 
     if (status === "DISPONIBLE")
       return {
-        color: COLORS.gold,
+        color: "#1be91e",
         border: `1px solid ${COLORS.gold}`,
       };
 
     if (status === "NEGOCIACION")
       return {
-        color: COLORS.gold,
+        color: "#30d8e0",
         border: `1px solid ${COLORS.gold}`,
-        opacity: 0.7,
       };
 
     if (status === "VENDIDO")
       return {
-        color: "#666",
-        border: "1px solid #666",
+        color: "#ff0000",
+        border: `1px solid ${COLORS.gold}`,
       };
 
     return {

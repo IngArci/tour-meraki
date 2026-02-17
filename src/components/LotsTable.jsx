@@ -29,20 +29,19 @@ export default function LotsTable({
     if (s === "DISPONIBLE")
       return {
         border: "1px solid #CFAB42",
-        color: "#CFAB42",
+        color: "#1be91e",
       };
 
     if (s === "NEGOCIACION")
       return {
         border: "1px solid #CFAB42",
-        color: "#CFAB42",
-        opacity: 0.7,
+        color: "#30d8e0",
       };
 
     if (s === "VENDIDO")
       return {
-        border: "1px solid #666",
-        color: "#666",
+        border: "1px solid #CFAB42",
+        color: "#ff0000",
       };
 
     return {
@@ -110,9 +109,9 @@ export default function LotsTable({
                 onClick={() => onSelectSector?.(s.id)}
                 style={{
                   padding: "6px 14px",
-                  background: active ? COLORS.gold : "transparent",
-                  color: active ? COLORS.black : COLORS.white,
-                  border: `1px solid ${COLORS.border}`,
+                  border: active ? `2px solid ${s.color || "#2563EB"}` : "1px solid #E5E7EB",
+                  background: active ? (s.color || "#2563EB") : "black",
+                  color: active ? "black" : "#ffffff",
                   cursor: "pointer",
                   fontSize: 12,
                   letterSpacing: 1,
