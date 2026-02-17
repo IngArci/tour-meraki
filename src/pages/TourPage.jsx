@@ -32,6 +32,54 @@ export default function TourPage() {
   const [mapImage, setMapImage] = useState(null);
   const [mapSize, setMapSize] = useState(null);
 
+  const PIN_CONFIGS = {
+    texas: {
+      iconSize: 24,
+      iconSizeSelected: 50,
+      circleRadius: 8,
+      circleRadiusSelected: 20
+    },
+
+    colorado: {
+      iconSize: 20,
+      iconSizeSelected: 60,
+      circleRadius: 12,
+      circleRadiusSelected: 30
+    },
+
+    "los-angeles": {
+      iconSize: 26,
+      iconSizeSelected: 80,
+      circleRadius: 14,
+      circleRadiusSelected: 34
+    },
+    "las-vegas": {
+      iconSize: 20,
+      iconSizeSelected: 60,
+      circleRadius: 12,
+      circleRadiusSelected: 30
+    },
+    "san-francisco": {
+      iconSize: 30,
+      iconSizeSelected: 60,
+      circleRadius: 12,
+      circleRadiusSelected: 30
+    },
+    "rio-medina": {
+      iconSize: 40,
+      iconSizeSelected: 60,
+      circleRadius: 12,
+      circleRadiusSelected: 30
+    },
+    "rio-lagunilla": {
+      iconSize: 40,
+      iconSizeSelected: 60,
+      circleRadius: 12,
+      circleRadiusSelected: 30
+    },
+  };
+
+
 
   useEffect(() => {
     const fn = () => setIsMobile(window.innerWidth < 768);
@@ -323,6 +371,7 @@ export default function TourPage() {
         viewBox={viewBox}
         planImage={mapImage || project.planImage || "/plano-color.jpeg"}
         planSize={mapSize || project.planSize}
+        pinConfig={PIN_CONFIGS[sectorId]}
       />
 
       {selected && <LotModal lot={selected} onClose={() => setSelected(null)} />}
